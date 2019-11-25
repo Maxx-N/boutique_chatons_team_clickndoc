@@ -16,20 +16,18 @@ u = [] #tableau User
 i = [] #Tableau Item
 c = [] #tableau Cart
 
-5.times do
+5.times do |index|
 u << User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Name.first_name + "@yopmail.com", password: "fauxuser")
-puts "User : #{Faker::Name.first_name}"
+puts "User : #{Faker::Name.first_name}, cart create"
+c << Cart.create(user_id: u[index].id)
 end
 
 40.times do
-i << Item.create(title: Faker::Book.title, description: Faker::Lorem.sentence(word_count: 20), price: rand(1..100)+","+rand(1..9)+rand(1..9), image: "https://static.wamiz.fr/images/articles/facebook/article/chaton-jouets-fb-59a3ea83c1a7d.jpg")
+i << Item.create(title: Faker::Book.title, description: Faker::Lorem.sentence(word_count: 20), price: rand(1.00..100.99), image_url: "https://static.wamiz.fr/images/articles/facebook/article/chaton-jouets-fb-59a3ea83c1a7d.jpg")
 puts "Item: #{Faker::Book.title}"
 end
 
-5.times do
-c << Cart.create(user_id: u.sample)
-end
-puts "Cart create"
+
 
 20.times do
   ItemCart.create(cart_id: c.sample, item_id: i.sample)
@@ -38,6 +36,6 @@ puts "ItemCart create"
 
 clength = c.length
 clength.times do |index|
-Order.create(cart_id: c[index])
+Order.create(cart_id: c[index].id)
 end
 puts "Order Create"
