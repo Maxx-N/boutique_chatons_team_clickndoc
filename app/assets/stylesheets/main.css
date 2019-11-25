@@ -3,8 +3,12 @@
   --white: #ffffff;
   --light-grey: #ededed;
   --dark-grey: #232323;
-  --first-color: #ADF07C;
+  --first-color: #A3C39E;
   --second-color: #FFE399;
+  --link: #509050;
+  --link-hover: #505050;
+  --height-header: 500px;
+  --height-header-neg: -500px;
 }
 
 /* présentation couleur kit UI */
@@ -17,12 +21,203 @@
 /* class générales */
 .playfair {
   font-family: "Playfair-Display", serif;
+  letter-spacing:-3px;
+}
+
+.up {
+  text-transform:uppercase;
+  letter-spacing:2px;
 }
 
 /* partie CSS général */
 
-.box {
+body {
+  /* image à passer en ruby + à retoucher photoshop */
+  background-image:url('https://cdn.nohat.cc/thumb/f/720/4710860337446912.jpg');
+}
+a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--link-hover);
+}
+
+p{text-align:justify;}
+
+input::placeholder {
+  color: white !important;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* navbar */ 
+.navbar {
+  position:fixed;
+  top:0px; left: 0px;
+  z-index: 100;
+  width:100%;
+  height:50px;
   background-color: var(--light-grey);
-  border: 10px solid var(--first-color);
-  color: var(--second-color);
+}
+
+.btn-navbar {
+  color:var(--first-color);
+  margin-left:30px;
+}
+
+/* header */
+.jumbotron {
+  padding:0px;
+  margin:0px;
+}
+
+.img-jumbotron {
+  width:100%;
+  object-fit:cover;
+  height: var(--height-header);
+  z-index:0;
+}
+
+.jumbotron-text {
+  z-index:1;
+  margin-top:var(--height-header-neg);
+  height: var(--height-header);
+}
+
+.jumbotron-text h1{
+  color: var(--dark-grey);
+  text-shadow: 2px 0px 0px var(--first-color);
+}
+
+.jumbotron-text p{
+  background-color: var(--light-grey);
+  width:50%;
+  line-height:18px;
+  padding: 3px 10px 1px 10px;
+}
+
+/* navbar de recherche */
+.second-bar {
+  padding:10px;
+  background-color:var(--first-color);
+}
+.search-bar {
+  width:100%;
+}
+
+.search-b {
+  background: none !important;
+  border:0px;
+  color: var(--white) !important;
+}
+
+.search{
+  background-color: var(--light-grey);
+  margin:5px;
+}
+
+form {
+  width:70%;
+  margin:auto;
+}
+
+/* card index */
+
+.index-card {
+  margin:50px 0px;
+}
+.card {
+  width:350px !important;
+  margin:10px;
+  border-radius: 5px;
+}
+
+.card img {
+  z-index:1;
+}
+
+.card-body {
+  padding:5px 20px;
+}
+
+.title-card {
+  position:absolute;
+  left:30px;
+  background-color:var(--light-grey);
+  top:-15px;
+  box-shadow:2px 1px 0px var(--first-color);
+  padding:0px 10px;
+  text-align:right;
+  z-index:10;
+  border-radius:3px;
+  text-shadow: 1px 0px 0px var(--first-color);
+}
+
+.price-index {
+  position:absolute;
+  background-color: var(--dark-grey);
+  color: var(--white);
+  bottom:20px;
+  font-size:15px;
+  border-radius:3px;
+  padding:2px 8px;
+  right:65px;
+  text-align:right;
+  z-index:10;
+}
+
+.add-to-cart {
+  position:absolute;
+  bottom:15px;
+  right:15px;
+  z-index:10;
+  background-color: var(--second-color);
+  font-size:13px;
+  border-radius: 100%;
+  padding:10px 12px;
+}
+
+/* éléments déroulants de la navbar */
+
+.navbar-menu {
+  background-color: var(--white);
+  width:350px;
+  padding:10px;
+}
+
+/* formulaires */
+
+.form-page {
+  width:60%;
+  margin:50px auto;
+  background-color:var(--white);
+  padding:50px;
+}
+
+.btn {
+  background-color: var(--first-color);
+  border:0px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.btn:hover {
+  background-color: var(--dark-grey);
+}
+
+label {
+  color: var(--first-color);
+}
+
+/* footer */
+
+footer {
+  background-color: var(--light-grey);
+  padding:10px;
+  text-align:center;
+  font-size: 10px;
 }
