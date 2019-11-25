@@ -11,10 +11,13 @@ require 'faker'
 User.destroy_all
 Cart.destroy_all
 Item.destroy_all
+ItemCart.destroy_all
 Order.destroy_all
+ItemOrder.destroy_all
 u = [] #tableau User
 i = [] #Tableau Item
 c = [] #tableau Cart
+o = [] #tableau Order
 
 5.times do |index|
 u << User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Name.first_name + "@yopmail.com", password: "fauxuser")
@@ -37,6 +40,11 @@ puts "ItemCart create"
 
 clength = c.length
 clength.times do |index|
-Order.create(cart_id: c[index].id)
+o << Order.create(cart_id: c[index].id)
 end
 puts "Order Create"
+
+20.times do
+  ItemOrder.create(order_id: o.sample.id, item_id: i.sample.id)
+end
+puts "ItemOrder create"
