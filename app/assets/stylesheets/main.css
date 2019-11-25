@@ -318,6 +318,71 @@ footer {
 .back {
   background-color: var(--white);
   width:70%;
-  padding:10px;
   margin:50px auto;
+  padding:10px;
 }
+
+.title-show {
+  text-align:center;
+  margin:10px 0px -5px 0px;
+}
+
+/* show kitten */
+
+.img-show{
+  width:50%;
+  padding-left:20px;
+}
+
+.img-show img{
+  height:400px;
+  object-fit: cover;
+}
+
+.right-show{
+  width:50%;
+  padding:20px;
+}
+
+.describ {
+  height:225px;
+  padding-right:10px;
+  line-height:18px;
+  overflow:auto;
+}
+
+.add-to-cart-show {
+  background-color: var(--second-color);
+  border-radius:5px;
+  padding:8px 0px 5px 0px;
+  text-align:center;
+  display: block;
+  color: var(--dark-grey) !important;
+}
+
+.add-to-cart-show:hover {
+  background-color: var(--first-color);
+}
+
+/* profil show */
+
+.left-profile {
+  width:40%;
+}
+
+.left-profile a{
+  background-color: var(--light-grey);
+  display:block;
+  padding:5px 10px;
+  text-align:right;
+}
+.left-profile a:hover{
+  background-color: var(--second-color);
+}
+
+.right-profile {
+  padding:10px;
+  width:100%;
+}
+
+/* panier show */
