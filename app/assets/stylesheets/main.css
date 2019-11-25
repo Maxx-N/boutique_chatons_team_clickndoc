@@ -1,0 +1,28 @@
+/* variables couleur du CSS a modifier si besoin */
+:root {
+  --white: #ffffff;
+  --light-grey: #ededed;
+  --dark-grey: #232323;
+  --first-color: #ADF07C;
+  --second-color: #FFE399;
+}
+
+/* présentation couleur kit UI */
+.box-color {
+  width:100px;
+  height:100px;
+  margin:5px;
+}
+
+/* class générales */
+.playfair {
+  font-family: "Playfair-Display", serif;
+}
+
+/* partie CSS général */
+
+.box {
+  background-color: var(--light-grey);
+  border: 10px solid var(--first-color);
+  color: var(--second-color);
+}
