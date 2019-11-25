@@ -31,7 +31,7 @@ puts "Item: #{Faker::Book.title}"
 end
 
 20.times do
-  ItemCart.create(cart_id: c.sample, item_id: i.sample)
+  ItemCart.create(cart_id: c.sample.id, item_id: i.sample.id)
 end
 puts "ItemCart create"
 
