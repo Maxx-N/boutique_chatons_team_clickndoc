@@ -29,6 +29,10 @@
   letter-spacing:2px;
 }
 
+.green {
+  color: var(--first-color);
+}
+
 /* partie CSS général */
 
 body {
@@ -47,6 +51,14 @@ a:hover {
 
 p{text-align:justify;}
 
+h1 {
+  text-shadow: 2px 0px 0px var(--first-color);
+}
+
+h2 {
+  text-shadow: 1px 0px 0px var(--first-color);
+}
+
 input::placeholder {
   color: white !important;
   font-size:10px;
@@ -61,7 +73,7 @@ input::placeholder {
   z-index: 100;
   width:100%;
   height:50px;
-  background-color: var(--light-grey);
+  background-color: var(--light-grey) !important;
 }
 
 .btn-navbar {
@@ -90,7 +102,6 @@ input::placeholder {
 
 .jumbotron-text h1{
   color: var(--dark-grey);
-  text-shadow: 2px 0px 0px var(--first-color);
 }
 
 .jumbotron-text p{
@@ -181,12 +192,92 @@ form {
   padding:10px 12px;
 }
 
+.add-to-cart:hover {
+  background-color:var(--first-color);
+}
+
 /* éléments déroulants de la navbar */
 
-.navbar-menu {
+.navbar-menu-user {
+  background-color: var(--white);
+  width:250px;
+}
+
+.navbar-menu-user a {
+  display:block;
+  padding:5px 10px;
+}
+.navbar-menu-user a:hover {
+  display:block;
+  background-color: var(--second-color);
+}
+
+.navbar-menu-cart {
   background-color: var(--white);
   width:350px;
   padding:10px;
+}
+
+.navbar-cart-title {
+  font-size:30px;
+  color: var(--first-color);
+  padding-left:30px;
+  margin-bottom:-10px;
+}
+.navbar-cart-number {
+  font-size:10px;
+  padding-left:30px;
+  margin-bottom:10px;
+  border-bottom: 1px dotted var(--first-color);
+}
+
+.all-preview-cart {
+  max-height:300px; /* environs 5 articles */ 
+  overflow:auto;
+}
+
+.preview-cart {
+  padding:5px;
+}
+
+.preview-cart:hover {
+  background-color: var(--light-grey);
+}
+
+.icone-preview {
+  width:40px; 
+  height:40px; 
+  object-fit: cover;
+  border-radius:100%;
+}
+
+.preview-name {
+  font-size:12px;
+}
+
+.preview-price {
+  font-size: 18px;
+  padding-right:10px;
+}
+
+.trash{ 
+padding-left:10px;
+color: var(--second-color);
+}
+
+.footer-preview {
+  font-size:10px;
+  margin-top:10px;
+  border-top: 1px dotted var(--first-color);
+  padding:10px;
+}
+
+.footer-preview a{
+  padding:3px;
+}
+.footer-preview a:hover{
+  background-color: var(--second-color);
+  border-radius:3px;
 }
 
 /* formulaires */
@@ -220,4 +311,13 @@ footer {
   padding:10px;
   text-align:center;
   font-size: 10px;
+}
+
+/* show général*/
+
+.back {
+  background-color: var(--white);
+  width:70%;
+  padding:10px;
+  margin:50px auto;
 }

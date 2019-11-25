@@ -13,14 +13,18 @@
         </li>
       </ul>
       <span class="navbar-text d-flex">
-        <div class="btn-navbar">
+        <a href="#">
+          <div class="btn-navbar">
           <i class="fas fa-user"></i>
           Connexion
         </div>
-        <div class="btn-navbar">
+        </a>
+        <a href="#">
+          <div class="btn-navbar">
           <i class="fas fa-shopping-cart"></i> 
           Panier
         </div>
+        </a>
       </span>
     </div>
   </nav>
@@ -58,9 +62,11 @@
   <div class="price-index up">
       0.00 €
   </div>
+  <a href="#" style="color:var(--dark-grey);">
   <div class="add-to-cart">
     <i class="fas fa-shopping-cart"></i> 
   </div>
+</a>
 </div>
 
 <div class="card">
@@ -95,14 +101,58 @@
 <div style="margin:100px auto; width:80%;" class="d-flex justify-content-around">
 
 <!-- menu connexion -->
-  <div class="navbar-menu">
-  texte
+  <div class="navbar-menu-user up">
+  <a href="#">
+    Connexion
+  </a>
+  <a href="#">
+    Inscription
+  </a>
+  <a href="#">
+    Profil
+  </a>
+  <a href="#">
+    Déconnexion
+  </a>
 </div>
 
 <!-- menu panier -->
-<div class="navbar-menu">
-  texte
+<div class="navbar-menu-cart">
+    <div class="navbar-cart-title playfair">Mon panier</div>
+    <div class="navbar-cart-number up">Nombre d'articles : 12</div>
+
+    <div class="all-preview-cart">
+
+      <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+        <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview"></div>
+        <div class="preview-name up">Nom du chaton<br />
+          <!--<span class="green">Quantité : 1</span>-->
+        </div>
+        <div class="preview-price">
+          0.00 € <a class="trash" href="#"><i class="fas fa-trash-alt"></i></a>
+        </div>
+      </div>
+
+
+      <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+        <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview"></div>
+        <div class="preview-name up">Nom du chaton<br />
+          <!--<span class="green">Quantité : 1</span>-->
+        </div>
+        <div class="preview-price">
+          0.00 € <a class="trash" href="#"><i class="fas fa-trash-alt"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-around footer-preview">
+      <div><a href="#" class="up">Vider le panier</a></div>
+      <div><a href="#" class="up">Voir le panier</a></div>
+    </div>
+
 </div>
+
 </div>
 
 <!-- pallette de couleurs -->
@@ -139,21 +189,37 @@
   <h1 class="playfair">Connexion</h1>
 
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
+    <label for="exampleInputEmail1" class="up">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
+    <label for="exampleInputPassword1" class="up">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <label class="form-check-label up" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 </form>
+
+<!-- pages show photo -->
+
+<div class="back">
+  texte
+</div>
+
+<!-- page profil-->
+<div class="back">
+  texte
+</div>
+
+<!-- page panier -->
+<div class="back">
+  texte
+</div>
 
 <footer class="up">
 <strong>Kitty pics shop</strong> - Projet THP de Maxime Norval, Christophe Bonnefoy, Lucas Jégo et Claire Tardy</footer>
