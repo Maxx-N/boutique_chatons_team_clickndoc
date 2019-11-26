@@ -1,3 +1,10 @@
+<!-- total panier -->
+<% @cart = current_user.cart 
+  @total = 0
+  @cart.items.each do |item|
+    @total += item.price
+  end %>
+
 <!-- navbar -->
 <nav class="up navbar navbar-expand-lg navbar-light bg-light">
 
@@ -18,14 +25,14 @@
     <span class="navbar-text d-flex">
 
     <!-- lien provisoire -->
-      <div class="btn-navbar" id="btn01">
+      <div class="btn-navbar">
         <i class="fas fa-user"></i>
         <a href="/users/sign_in" style="color: var(--first-color) !important;">
         Connexion
         </a>
       </div>
       <% if current_user %>
-      <div class="btn-navbar" id="btn01">
+      <div class="btn-navbar">
         <i class="fas fa-user"></i>
         <a href="/users/<%= current_user.id%>" style="color: var(--first-color) !important;">
         Son profil
@@ -33,9 +40,10 @@
       </div>
       <% end%>
 
-      <div class="btn-navbar" id="btn02">
+      <div class="btn-navbar btn2">
         <i class="fas fa-shopping-cart"></i> 
-        Panier
+        Panier : 
+        <%= @total %> € - <%= @cart.items.length %>
       </div>
 
     </span>
@@ -68,13 +76,7 @@ Javascript à faire -->
 
 -->
 
-<% 
-  @cart = current_user.cart 
-  @total = 0
-  @cart.items.each do |item|
-    @total += item.price
-  end
-%>
+
 
 <div class="menu-navbar" id="menu02">
   <div class="navbar-menu-cart">

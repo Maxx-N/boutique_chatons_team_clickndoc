@@ -21,4 +21,16 @@ console.log(menuNavbar01);
 
 let menuNavbar02 = document.getElementById("menu02");
 console.log(menuNavbar02);
+
+let btn = document.getElementsByClassName("btn-navbar");
+console.log(btn);
+console.log(btn[0]);
+
+let btn2 = document.getElementById("btn01");
+console.log(btn2);
+
+let btnCart = document.getElementsByClassName("btn-cart");
+console.log(btnCart);
+btnCart[0].style.backgroundColor = "#ff1100"
+
 */
