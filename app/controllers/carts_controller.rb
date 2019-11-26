@@ -33,5 +33,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
+    current_user.cart.item_carts.destroy_all
+    redirect_to root_path
   end
 end

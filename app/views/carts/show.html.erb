@@ -12,15 +12,12 @@
             <%= @cart.items.length%> </h3>
 
           <div class="up text-center">Total</div>
-          <h3 class="up text-center mb-3">
-            <%= @total %> €
-          </h3>
 
-          <%= link_to orders_path, method: :post do %>
-            Passer commande
-          <% end %>
-          
-          <a href="#">Vider le panier</a>
+          <h3 class="up text-center mb-3">
+              <%= @total %> €
+          </h3>
+          <%= link_to "Passer commande", orders_path, method: :post %>
+          <%= link_to "Vider le panier", cart_path(current_user.id), method: :delete %>
       </div>
       <div class="right-profile">
 

@@ -68,6 +68,14 @@ Javascript à faire -->
 
 -->
 
+<% 
+  @cart = current_user.cart 
+  @total = 0
+  @cart.items.each do |item|
+    @total += item.price
+  end
+%>
+
 <div class="menu-navbar" id="menu02">
   <div class="navbar-menu-cart">
     <div class="navbar-cart-title playfair">Mon panier</div>
@@ -119,12 +127,12 @@ Javascript à faire -->
     </div>
 
     <div class="up text-right total-cart">
-        Total : 0.00 €
+        Total : <%= @total %> €
     </div>
 
     <div class="d-flex justify-content-around footer-preview">
-      <div><a href="#" class="up">Vider le panier</a></div>
-      <div><a href="#" class="up">Voir le panier</a></div>
+      <div><%= link_to "Vider le panier", cart_path(current_user.id), :class => "up", method: :delete %></div>
+      <div><%= link_to "Voir le panier", cart_path(current_user.id), :class => "up" %></div>
     </div>
 
 
