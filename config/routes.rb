@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+#if current_user.admin?
   namespace :admin do
       resources :users
       resources :carts
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
+#end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'items#index'
