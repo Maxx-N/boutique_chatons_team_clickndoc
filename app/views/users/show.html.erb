@@ -1,0 +1,78 @@
+<%= render 'layouts/return_index'%>
+
+<div class="back">
+    <h1 class="playfair display-4 title-show">Profil</h1>
+  <div class="d-flex justify-content-center">
+  <div class="left-profile up">
+    <%= link_to "Modifier le compte", edit_user_registration_path %>
+  </div>
+  <div class="right-profile">
+    
+      <p class="ml-3">
+          <span class="green up">Nom :</span> <%= @user.last_name%><br />
+          <span class="green up">Prénom :</span> <%= @user.first_name %><br />
+          <span class="green up">Email : </span> <%= @user.email %>
+        </p>
+
+
+    <h1 class="playfair mt-3">Historiques des commandes</h1>
+    <div class="d-flex justify-content-around flex-wrap">
+
+
+<% @orders.each do |order| %>
+      <!-- commande 1 -->
+      <div class="card-cart">
+  
+        <div class="navbar-cart-title playfair">Commande #<%=order.id%></div>
+        <div class="navbar-cart-number up">Date : <%= order.created_at %></div>
+        
+        <div class="all-preview-cart">
+
+        <% all_items_order = ItemOrder.where(order_id: order.id) %>
+        <% all_items_order.each do |item| %>
+          <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+
+              <div>
+                <%= image_tag item.item.image_url, :class => "icone-preview" %>
+              </div>
+
+              <div class="preview-name up">
+               <%= item.item.title %><br />
+              </div>
+
+              <div class="preview-price min">
+                <%= item.item.price %> €
+              </div>
+              <div>
+                <%= link_to cart_path(item.id), method: :put do %>
+                  <div class="trash">
+                    <i class="fas fa-shopping-cart"></i>
+                  </div>
+                <% end %>
+              </div>
+
+          </div>
+        <%end%>
+        </div>
+                  
+            <div class="up text-right total-cart">
+            <div class="min">Nombre d'articles : <%= all_items_order.length %></div>
+
+            <% total = 0 %>
+            <% order.items.each do |item| %>
+              <% total += item.price %>
+            <% end %>  
+
+            Total : <%= total %> €
+            </div>
+        
+      
+       </div>
+
+<%end%>
+  
+    </div>
+
+  </div>
+</div>
+</div>

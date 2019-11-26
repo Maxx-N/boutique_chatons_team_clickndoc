@@ -24,7 +24,10 @@
       <p class="up">
         <span class="green">Prix :</span> <%= @item.price %> €
       </p>
-      <a href="#" class="add-to-cart-show up">Ajouter au panier</a>
+
+      <%= link_to cart_path(@item.id), method: :put do %>
+        <div class="add-to-cart-show up">Ajouter au panier</a>
+      <% end %>
     </div>
   </div>
 

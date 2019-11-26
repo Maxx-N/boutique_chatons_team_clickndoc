@@ -1,16 +1,3 @@
-<% if flash[:success] %>
-  <div class="flash">
-    <%= flash[:success] %>
-  </div>
-<% elsif flash[:alert] %>
-  <div class="flash">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
-
-<br><br>
-<%= link_to "Voir la liste de mes commandes", orders_path %>
-
 <div class="index-card d-flex justify-content-center flex-wrap">
 
 <% @items.each do |item| %>
