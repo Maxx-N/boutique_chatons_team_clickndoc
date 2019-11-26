@@ -8,7 +8,7 @@
 <h1 class="text-center">Les photos de chatons :</h1>
 <br><br>
 <% @items.each do |item| %>
-  <h3><strong><%= item.title %></strong></h3>
+  <h3><strong><%= link_to "#{item.title}", item_path(item.id) %></strong></h3>
   <ul>
     <li><%= item.image_url %></li>
     <li><%= item.price %></li>
