@@ -9,9 +9,16 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      if current_user
+        unless current_user.admin?
+          flash[:danger] = "Vous ne pouvez pas vous rendre sur cette page"
+          redirect_to root_path
+        end  # TODO Add authentication logic here.
+      else
+        flash[:danger] = "Please log in."
+        redirect_to user_session_path
+      end
     end
-
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
     # def records_per_page
