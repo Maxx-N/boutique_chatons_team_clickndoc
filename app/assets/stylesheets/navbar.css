@@ -15,6 +15,13 @@
 
 /* éléments déroulants de la navbar */
 
+.menu-navbar {
+  position:fixed;
+  top:50px;
+  right:20px;
+  z-index:9;
+}
+
 /* côté user */
 .navbar-menu-user {
   background-color: var(--white);

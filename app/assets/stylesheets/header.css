@@ -1,7 +1,7 @@
 /* header */
 .jumbotron {
   padding:0px;
-  margin:0px;
+  margin:50px 0px 0px 0px;
 }
 
 .img-jumbotron {
@@ -25,6 +25,7 @@
   background-color: var(--light-grey);
   width:50%;
   line-height:18px;
+  color: var(--dark-grey) !important;
   padding: 3px 10px 1px 10px;
 }
 
