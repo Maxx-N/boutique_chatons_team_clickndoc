@@ -201,6 +201,7 @@ form {
 .navbar-menu-user {
   background-color: var(--white);
   width:250px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .navbar-menu-user a {
@@ -216,6 +217,7 @@ form {
   background-color: var(--white);
   width:350px;
   padding:10px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .navbar-cart-title {
@@ -265,9 +267,13 @@ padding-left:10px;
 color: var(--second-color);
 }
 
+.total-cart {
+  margin-top:10px;
+  border-top: 1px dotted var(--first-color);
+  padding:3px 10px 0px 0px;
+}
 .footer-preview {
   font-size:10px;
-  margin-top:10px;
   border-top: 1px dotted var(--first-color);
   padding:10px;
 }
@@ -373,8 +379,10 @@ footer {
 .left-profile a{
   background-color: var(--light-grey);
   display:block;
-  padding:5px 10px;
-  text-align:right;
+  border-radius:50px;
+  margin:5px;
+  padding:5px 10px 3px 10px;
+  text-align:center;
 }
 .left-profile a:hover{
   background-color: var(--second-color);
@@ -383,6 +391,13 @@ footer {
 .right-profile {
   padding:10px;
   width:100%;
+}
+
+.card-cart {
+  width:45%;
+  border:1px solid var(--second-color);
+  border-radius:5px;
+  padding:5px;
 }
 
 /* panier show */
