@@ -12,4 +12,9 @@
  *
  *= require bootstrap
  *= require main
+ *= require navbar
+ *= require header
+ *= require index
+ *= require form
+ *= require show
  */

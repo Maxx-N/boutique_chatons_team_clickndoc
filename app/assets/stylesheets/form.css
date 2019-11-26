@@ -1,0 +1,29 @@
+
+/* formulaires */
+
+.form-page {
+  width:500px;
+  margin:50px auto;
+  background-color:var(--white);
+  padding:50px;
+}
+
+.form-form {
+  margin-top:40px;
+  text-align:center;
+}
+
+.btn {
+  background-color: var(--first-color);
+  border:0px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.btn:hover {
+  background-color: var(--dark-grey);
+}
+
+label {
+  color: var(--first-color);
+}

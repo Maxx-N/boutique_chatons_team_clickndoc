@@ -1,2 +1,36 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<% if flash[:success] %>
+  <div class="flash">
+    <%= flash[:success] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="flash">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+
+<div class="index-card d-flex justify-content-center flex-wrap">
+
+<% @items.each do |item| %>
+
+  <div class="card">
+  <%= image_tag item.image_url, :class => "card-img-top" %>
+
+  <div class="title-card up">
+    <%= link_to "#{item.title}", item_path(item.id) %>  </div>
+  <div class="price-index up">
+  <%= item.price %> €
+  </div>
+  <a href="#" style="color:var(--dark-grey);">
+ 
+  <%= link_to cart_path(item.id), method: :put do %>
+    <div class="add-to-cart">
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+  <% end %>
+
+</div>  
+
+<% end %>
+
+</div>

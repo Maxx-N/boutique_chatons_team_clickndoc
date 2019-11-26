@@ -1,2 +1,11 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<%= link_to "Retour à l'index", items_path %>
+<br><br>
+<%= @item.image_url %>
+<br><br>
+<h1 class="text-center"><strong><%= @item.title %></strong></h1>
+<ul>
+  <br>
+  <li><%= @item.description %></li>
+  <br>
+  <li><%= @item.price %> euros</li>
+</ul>

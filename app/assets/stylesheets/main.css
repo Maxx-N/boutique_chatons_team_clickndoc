@@ -1,0 +1,95 @@
+/* variables couleur du CSS a modifier si besoin */
+:root {
+  --white: #ffffff;
+  --light-grey: #ededed;
+  --dark-grey: #232323;
+  --first-color: #A3C39E;
+  --second-color: #FFE399;
+  --link: #509050;
+  --link-hover: #505050;
+  --height-header: 500px;
+  --height-header-neg: -500px;
+}
+
+/* class générales */
+.playfair {
+  font-family: "Playfair-Display", serif;
+  letter-spacing:-3px;
+}
+
+.up {
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.green {
+  color: var(--first-color);
+}
+
+.min {
+  font-size:10px;
+  color: #707070;
+}
+
+/* partie CSS général */
+
+body {
+  /* image à passer en ruby + à retoucher photoshop */
+  background-image:url('https://cdn.nohat.cc/thumb/f/720/4710860337446912.jpg');
+}
+a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--link-hover);
+}
+
+p{text-align:justify;}
+
+h1 {
+  text-shadow: 2px 0px 0px var(--first-color);
+}
+
+h2 {
+  text-shadow: 1px 0px 0px var(--first-color);
+}
+
+input::placeholder {
+  color: white !important;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.flash {
+  background-color: var(--white);
+  border-radius:5px;
+  margin:20px auto;
+  width:40%;
+  text-align:center;
+  border:1px solid var(--second-color);
+  padding:10px;
+}
+
+.separator {
+  width:50%;
+  margin:20px auto;
+  border-bottom:1px dotted var(--first-color);
+}
+/* footer */
+footer {
+  background-color: var(--light-grey);
+  padding:10px;
+  text-align:center;
+  font-size: 10px;
+}
+
+/* présentation couleur kit UI */
+.box-color {
+  width:100px;
+  height:100px;
+  margin:5px;
+}
