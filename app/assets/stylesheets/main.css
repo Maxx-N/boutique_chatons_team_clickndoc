@@ -26,6 +26,11 @@
   color: var(--first-color);
 }
 
+.min {
+  font-size:10px;
+  color: #707070;
+}
+
 /* partie CSS général */
 
 body {
@@ -69,6 +74,11 @@ input::placeholder {
   padding:10px;
 }
 
+.separator {
+  width:50%;
+  margin:20px auto;
+  border-bottom:1px dotted var(--first-color);
+}
 /* footer */
 footer {
   background-color: var(--light-grey);

@@ -1,0 +1,26 @@
+
+<div class="form-page">
+<h1 class="playfair">Mot de passe oublié ?</h1>
+
+<div class="form-form">
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field up">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  
+    <div class="min up">Entrez l'adresse email que vous avez utilisé lors de votre inscrption</div> 
+ 
+  </div>
+
+  <br />
+  <div class="actions">
+    <%= f.submit "ENVOYER" %>
+  </div>
+<% end %>
+</div>
+
+<%= render "devise/shared/links" %>
+
+</div>

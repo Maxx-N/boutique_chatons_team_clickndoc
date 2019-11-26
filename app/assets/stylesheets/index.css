@@ -50,6 +50,7 @@
   bottom:15px;
   right:15px;
   z-index:10;
+  color: var(--dark-grey) !important;
   background-color: var(--second-color);
   font-size:13px;
   border-radius: 100%;
