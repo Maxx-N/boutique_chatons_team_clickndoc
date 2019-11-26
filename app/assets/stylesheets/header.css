@@ -1,0 +1,55 @@
+/* header */
+.jumbotron {
+  padding:0px;
+  margin:0px;
+}
+
+.img-jumbotron {
+  width:100%;
+  object-fit:cover;
+  height: var(--height-header);
+  z-index:0;
+}
+
+.jumbotron-text {
+  z-index:1;
+  margin-top:var(--height-header-neg);
+  height: var(--height-header);
+}
+
+.jumbotron-text h1{
+  color: var(--dark-grey);
+}
+
+.jumbotron-text p{
+  background-color: var(--light-grey);
+  width:50%;
+  line-height:18px;
+  padding: 3px 10px 1px 10px;
+}
+
+/* navbar de recherche sous le jumbotron */
+.second-bar {
+  padding:10px;
+  background-color:var(--first-color);
+}
+
+.search-bar {
+  width:100%;
+}
+
+.search-b {
+  background: none !important;
+  border:0px;
+  color: var(--white) !important;
+}
+
+.search{
+  background-color: var(--light-grey);
+  margin:5px;
+}
+
+form {
+  width:70%;
+  margin:auto;
+}

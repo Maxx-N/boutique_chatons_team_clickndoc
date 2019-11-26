@@ -1,0 +1,61 @@
+
+/* cartes présentes sur l'index */
+
+.index-card {
+  margin:50px 0px;
+}
+
+.card {
+  width:350px !important;
+  margin:15px 10px;
+  border-radius: 5px;
+}
+
+.card img {
+  z-index:1;
+}
+
+.card-body {
+  padding:5px 20px;
+}
+
+.title-card {
+  position:absolute;
+  left:30px;
+  background-color:var(--light-grey);
+  top:-15px;
+  box-shadow:2px 1px 0px var(--first-color);
+  padding:0px 10px;
+  text-align:right;
+  z-index:10;
+  border-radius:3px;
+  text-shadow: 1px 0px 0px var(--first-color);
+}
+
+.price-index {
+  position:absolute;
+  background-color: var(--dark-grey);
+  color: var(--white);
+  bottom:20px;
+  font-size:15px;
+  border-radius:3px;
+  padding:2px 8px;
+  right:65px;
+  text-align:right;
+  z-index:10;
+}
+
+.add-to-cart {
+  position:absolute;
+  bottom:15px;
+  right:15px;
+  z-index:10;
+  background-color: var(--second-color);
+  font-size:13px;
+  border-radius: 100%;
+  padding:10px 12px;
+}
+
+.add-to-cart:hover {
+  background-color:var(--first-color);
+}
