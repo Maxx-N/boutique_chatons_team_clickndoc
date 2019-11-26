@@ -1,0 +1,12 @@
+<h1>Carts#show</h1>
+
+<p>
+  <ul>
+    <% current_user.cart.items.each do |item| %>
+        <li><%= item.title %></li>
+        <li><%= item.description %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= button_to "Confirmer commande", orders_path, method: :post %>

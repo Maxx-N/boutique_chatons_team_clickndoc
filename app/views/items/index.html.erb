@@ -1,0 +1,19 @@
+<% if flash[:success] %>
+  <%= flash[:success] %>
+<% elsif flash[:alert] %>
+  <%= flash[:alert] %>
+<% end %>
+
+
+<h1 class="text-center">Les photos de chatons :</h1>
+<br><br>
+<% @items.each do |item| %>
+  <h3><strong><%= link_to "#{item.title}", item_path(item.id) %></strong></h3>
+  <ul>
+    <li><%= item.image_url %></li>
+    <li><%= item.price %></li>
+    <li><%= item.description %></li>
+  </ul>
+  <%= link_to "Ajouter au panier", cart_path(item.id), method: :put %>
+  <br><hr>
+<% end %>

@@ -1,13 +1,364 @@
-<div class="card text-center">
-    <div class="card-header">
-      Featured
+<div style="height:50px;"><!-- espace blanc de la navbar --></div>
+
+<!-- navbar -->
+<nav class="up navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Kitten pics shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <span class="navbar-text d-flex">
+        <a href="#">
+          <div class="btn-navbar">
+          <i class="fas fa-user"></i>
+          Connexion
+        </div>
+        </a>
+        <a href="#">
+          <div class="btn-navbar">
+          <i class="fas fa-shopping-cart"></i> 
+          Panier
+        </div>
+        </a>
+      </span>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  </nav>
+  
+<!-- header -->
+
+<!-- penser à changer l'url de l'image en ruby -->
+<div class="jumbotron jumbotron-fluid">
+  <img src="https://images.pexels.com/photos/1084425/pexels-photo-1084425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-jumbotron">
+  <div class="container jumbotron-text d-flex flex-column justify-content-center">
+    <h1 class="playfair display-4">Kitten Pics</h1>
+    <p class=" up">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+<!-- barre de recherche -->
+<div class="second-bar d-flex justify-content-around">
+  <div width="100%"></div>
+  <div style="width:550px;">
+    <form class="search-bar form-inline">
+        <input class="form-control search-b mr-sm-2" style="width:300px;" type="search" placeholder="Envie d'un chat en particulier ?" aria-label="Search">
+        <button class="search btn my-2 my-sm-0" style="background-color:var(--light-grey);" type="submit">Rechercher</button>
+    </form>
+  </div>
+</div>
+
+<!-- card -->
+<div class="index-card d-flex justify-content-center flex-wrap">
+
+<div class="card">
+  <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="card-img-top" alt="kitten-img">
+  <div class="title-card up">
+    Nom du chaton 
+  </div>
+  <div class="price-index up">
+      0.00 €
+  </div>
+  <a href="#" style="color:var(--dark-grey);">
+  <div class="add-to-cart">
+    <i class="fas fa-shopping-cart"></i> 
+  </div>
+</a>
+</div>
+
+<div class="card">
+  <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="card-img-top" alt="kitten-img">
+  <div class="title-card up">
+    Nom du chaton 
+  </div>
+  <div class="price-index up">
+      0.00 €
+  </div>
+  <div class="add-to-cart">
+    <i class="fas fa-shopping-cart"></i> 
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="card-img-top" alt="kitten-img">
+  <div class="title-card up">
+    Nom du chaton 
+  </div>
+  <div class="price-index up">
+      0.00 €
+  </div>
+  <div class="add-to-cart">
+    <i class="fas fa-shopping-cart"></i> 
+  </div>
+</div>
+          
+</div>
+
+<!-- éléments navbar -->
+<div style="margin:100px auto; width:80%;" class="d-flex justify-content-around">
+
+<!-- menu connexion -->
+  <div class="navbar-menu-user up">
+  <a href="#">
+    Connexion
+  </a>
+  <a href="#">
+    Inscription
+  </a>
+  <a href="#">
+    Profil
+  </a>
+  <a href="#">
+    Déconnexion
+  </a>
+</div>
+
+<!-- menu panier -->
+<div class="navbar-menu-cart">
+    <div class="navbar-cart-title playfair">Mon panier</div>
+    <div class="navbar-cart-number up">Nombre d'articles : 12</div>
+
+    <div class="all-preview-cart">
+
+      <!-- article 1 -->
+      <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+        <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview"></div>
+        <div class="preview-name up">Nom du chaton<br />
+          <!--<span class="green">Quantité : 1</span>-->
+        </div>
+        <div class="preview-price">
+          0.00 € <a class="trash" href="#"><i class="fas fa-trash-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- article 2 -->
+      <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+        <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview"></div>
+        <div class="preview-name up">Nom du chaton<br />
+          <!--<span class="green">Quantité : 1</span>-->
+        </div>
+        <div class="preview-price">
+          0.00 € <a class="trash" href="#"><i class="fas fa-trash-alt"></i></a>
+        </div>
+      </div>
+
     </div>
-    <div class="card-footer text-muted">
-      2 days ago
+
+    <div class="up text-right total-cart">
+        Total : 0.00 €
+      </div>
+
+    <div class="d-flex justify-content-around footer-preview">
+        <div><a href="#" class="up">Vider le panier</a></div>
+        <div><a href="#" class="up">Voir le panier</a></div>
+      </div>
+
+</div>
+
+</div>
+
+<!-- pallette de couleurs -->
+<div class="d-flex justify-content-center">
+    <div class="box-color" style="background-color: var(--white);"></div>
+    <div class="box-color" style="background-color: var(--light-grey);"></div>
+    <div class="box-color" style="background-color: var(--first-color);"></div>
+    <div class="box-color" style="background-color: var(--second-color);"></div>
+    <div class="box-color" style="background-color: var(--dark-grey);"></div>
+  </div>
+  
+  <!-- textes -->
+  <div class="d-flex justify-content-around">
+    <div>
+  <h1 class="playfair">H1 - Playfair Display</h1>
+  <h2 class="playfair">H2 - Playfair Display</h2>
+  <h3 class="playfair">H3 - Playfair Display</h3>
+    </div>
+    <div style="width:50%;">
+  <p>
+    <strong>Paragraph :</strong>
+    Suspendisse rutrum lectus sit amet nisl sollicitudin, <a href="#">non euismod ante pharetra.</a> Suspendisse potenti. Aliquam cursus dictum purus, et dapibus odio euismod a. Nullam ultrices ante sed lacus ultricies porttitor. Sed sollicitudin mollis imperdiet. Ut nec velit sit amet urna laoreet sagittis. Maecenas porttitor luctus scelerisque. Cras vitae iaculis mauris.Ecrire ici l'histoire du personnage :  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus eget risus eu rutrum. Nam sed maximus sapien. Vestibulum lacus nulla, laoreet non elit vitae, sagittis finibus urna. Nulla iaculis placerat ornare. Quisque consectetur maximus bibendum. Fusce eget condimentum ipsum. Nullam nec velit hendrerit, tristique ex eu, suscipit libero.
+  </p>
+  </div></div>
+
+<!-- formulaires 
+  - register 
+  - login 
+  - password
+  - stripe -->
+
+<form>
+<div class="form-page">
+  <h1 class="playfair">Connexion</h1>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="up">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="up">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label up" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+
+<!-- pages show photo -->
+
+<div class="back">
+
+  <h1 class="title-show playfair display-4">Nom du chat</h1>
+  <div class="d-flex justify-content-between flex-nowrap">
+    <div class="img-show"><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="card-img" alt="img-kitten">
+    </div>
+
+    <div class="d-flex flex-column justify-content-between right-show">
+      <p class="up">
+        <span class="green">Taille de l'image :</span> 2000*1500px<br />
+        <span class="green">Photographe :</span> pexel.com
+      </p>
+      
+      <p class="describ">
+        <strong>Description de l'image : </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus eget risus eu rutrum. Nam sed maximus sapien. Vestibulum lacus nulla, laoreet non elit vitae, sagittis finibus urna. Nulla iaculis placerat ornare. Quisque consectetur maximus bibendum. Fusce eget condimentum ipsum. Nullam nec velit hendrerit, tristique ex eu, suscipit libero. 
+      </p>
+
+      <p class="up">
+        <span class="green">Prix :</span> 0,00€
+      </p>
+      <a href="#" class="add-to-cart-show up">Ajouter au panier</a>
     </div>
   </div>
+
+</div>
+
+<!-- page profil-->
+<div class="back">
+    <h1 class="playfair display-4 title-show">Profil</h1>
+  <div class="d-flex justify-content-center">
+  <div class="left-profile up">
+      <a href="#">Modifier le profil</a> <!-- lien vers edit -->
+      <a href="#">Supprimer le compte</a> <!-- lien vers delete -->
+  </div>
+  <div class="right-profile">
+    
+      <p class="ml-3">
+          <span class="green up">Nom :</span> Anonymous<br />
+          <span class="green up">Prénom :</span> Anonymous<br />
+          <span class="green up">Email : </span> anonymous@anonymous.com
+        </p>
+
+
+    <h1 class="playfair mt-3">Historiques des commandes</h1>
+    <div class="d-flex justify-content-around flex-wrap">
+
+      <!-- commande 1 -->
+      <div class="all-preview-cart card-cart">
+
+
+    <div class="navbar-cart-title playfair">Commande #0000</div>
+    <div class="navbar-cart-number up">Date : 00/00/0000</div>
+
+          <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+              <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview"></div>
+              <div class="preview-name up">Nom du chaton<br />
+                <!--<span class="green">Quantité : 1</span>-->
+              </div>
+              <div class="preview-price">
+                0.00 € <a class="trash" href="#">
+                    <i class="fas fa-shopping-cart"></i> </a>
+              </div>
+            </div>
+
+
+        <div class="up text-right total-cart">
+            Total : 0.00€
+          </div>
+  
+      
+        </div>
+
+        <!-- commande 2 -->
+      <div class="all-preview-cart card-cart">
+
+    <div class="navbar-cart-title playfair">Commande #0000</div>
+    <div class="navbar-cart-number up">Date : 00/00/0000</div>
+
+          <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+              <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview"></div>
+              <div class="preview-name up">Nom du chaton<br />
+                <!--<span class="green">Quantité : 1</span>-->
+              </div>
+              <div class="preview-price">
+                0.00 € <a class="trash" href="#">
+                    <i class="fas fa-shopping-cart"></i> </a>
+              </div>
+            </div>
+
+          <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+              <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview"></div>
+              <div class="preview-name up">Nom du chaton<br />
+                <!--<span class="green">Quantité : 1</span>-->
+              </div>
+              <div class="preview-price">
+                0.00 € <a class="trash" href="#">
+                    <i class="fas fa-shopping-cart"></i> </a>
+              </div>
+            </div>
+        
+            <div class="up text-right total-cart">
+              Total : 0.00€
+            </div>
+
+        </div>
+  
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- page panier -->
+<div class="back">
+
+  <h1 class="playfair display-4 text-center">Panier</h1>
+
+  <div class="d-flex justify-content-center">
+      <div class="left-profile up">
+          <div class="up text-center">Nombre d'articles</div>
+          <h3 class="up text-center mb-3">0</h3>
+          <div class="up text-center">Total</div>
+          <h3 class="up text-center mb-3">0,00€</h3>
+          <a href="#">Passer commande</a>
+          <a href="#">Vider le panier</a>
+      </div>
+      <div class="right-profile">
+
+  <div class="d-flex flex-nowrap">
+
+    <!-- article 1 -->
+      <div class="w-100 preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+          <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview">
+          <a href="#" class="trash"><i class="fas fa-search"></i></a></div>
+          <div class="preview-name up">Nom du chaton<br />
+            <!--<span class="green">Quantité : 1</span>-->
+          </div>
+          <div class="preview-price">
+            0.00 € <a class="trash" href="#"><i class="fas fa-trash-alt"></i></a>
+          </div>
+        </div>
+  </div>
+
+  </div>
+  </div>
+
+</div>
+ 
+<footer class="up">
+<strong>Kitty pics shop</strong> - Projet THP de Maxime Norval, Christophe Bonnefoy, Lucas Jégo et Claire Tardy</footer>
