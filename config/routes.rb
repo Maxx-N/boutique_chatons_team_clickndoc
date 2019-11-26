@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :items, only: [:show, :create, :index]  
   resources :orders, except: [:new, :edit, :update]
   resources :carts, except: [:new, :edit, :index]
+  resources :item_carts, only: [:destroy]
 
   resources :static_pages, only: [:index]
 

@@ -1,2 +1,31 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<%= render 'layouts/return_index'%>
+
+<div class="back">
+
+  <h1 class="title-show playfair display-4">
+  <%= @item.title %>
+  </h1>
+
+  <div class="d-flex justify-content-between flex-nowrap">
+    <div class="img-show">
+    <%= image_tag @item.image_url, :class => "card-img" %>
+    </div>
+
+    <div class="d-flex flex-column justify-content-between right-show">
+      <p class="up">
+        <span class="green">Taille de l'image :</span> 2000*1500px<br />
+        <span class="green">Photographe :</span> pexel.com
+      </p>
+      
+      <p class="describ">
+        <%= @item.description %>
+      </p>
+
+      <p class="up">
+        <span class="green">Prix :</span> <%= @item.price %> €
+      </p>
+      <a href="#" class="add-to-cart-show up">Ajouter au panier</a>
+    </div>
+  </div>
+
+</div>

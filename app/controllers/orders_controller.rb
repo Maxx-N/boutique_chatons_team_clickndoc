@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def index
+    @orders = current_user.orders
   end
 
   def show
@@ -11,12 +12,15 @@ class OrdersController < ApplicationController
     o.save
     
     current_user.cart.items.each do |item|
-      i = ItemOrder.new
-      i.item_id = item.id
-      i.order_id = o.id
-      i.save
+      io = ItemOrder.new
+      io.item_id = item.id
+      io.order_id = o.id
+      io.save
     end
 
+    current_user.cart.item_carts.destroy_all
+
+    redirect_to "/carts/#{current_user.id}"
   end
 
   def destroy

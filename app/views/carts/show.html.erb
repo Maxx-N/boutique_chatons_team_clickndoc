@@ -1,12 +1,61 @@
-<h1>Carts#show</h1>
+<%= render 'layouts/return_index'%>
 
-<p>
-  <ul>
-    <% current_user.cart.items.each do |item| %>
-        <li><%= item.title %></li>
-        <li><%= item.description %></li>
+<div class="back">
+
+  <h1 class="playfair display-4 text-center">Panier</h1>
+
+  <div class="d-flex justify-content-center">
+      <div class="left-profile up">
+
+          <div class="up text-center">Nombre d'articles</div>
+          <h3 class="up text-center mb-3">
+            <%= @cart.items.length%> </h3>
+
+          <div class="up text-center">Total</div>
+          <h3 class="up text-center mb-3">
+            <%= @total %> €
+          </h3>
+
+          <%= link_to orders_path, method: :post do %>
+            Passer commande
+          <% end %>
+          
+          <a href="#">Vider le panier</a>
+      </div>
+      <div class="right-profile">
+
+
+
+    <% @cart.items.each do |item| %>
+
+  <div class="d-flex flex-nowrap">
+
+      <div class="w-100 preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+          <div class="view_items">
+            <%= image_tag item.image_url, :class => "icone-preview" %>
+
+            <%= link_to item_path(item.id), :class => "trash" do %>
+              <i class="fas fa-search"></i>
+            <%end%>
+          </div>
+          <div class="preview-name up">
+            <%= item.title %><br />
+          </div>
+          <div class="preview-price">
+          <%= item.price %> € 
+
+          <%= link_to item_cart_path(ItemCart.find_by(item_id: item.id).id), :class => "trash", method: :delete do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+
+          </div>
+        </div>
+
+
+  </div>
     <% end %>
-  </ul>
-</p>
 
-<%= button_to "Confirmer commande", orders_path, method: :post %>
+  </div>
+  </div>
+
+</div>
