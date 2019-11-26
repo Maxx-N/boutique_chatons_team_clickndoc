@@ -18,6 +18,10 @@ u = [] #tableau User et cart
 i = [] #Tableau Item
 o = [] #tableau Order
 
+1.times do
+  User.create(first_name: "Staff", last_name: "Chaton", email: "staff-chaton@yopmail.com", password: "administrator", admin: true)
+end
+
 5.times do |index|
 u << User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Name.first_name + "@yopmail.com", password: "fauxuser")
 puts "User : #{Faker::Name.first_name}, cart create"
@@ -42,7 +46,7 @@ puts "ItemCart create"
 
 
 20.times do |index|
-o << Order.create(cart_id: u[index].id)
+o << Order.create(cart_id: u.sample.id)
 end
 puts "Order Create"
 

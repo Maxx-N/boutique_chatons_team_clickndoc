@@ -7,7 +7,7 @@ class User < ApplicationRecord
   after_create :cart_create
 
    def cart_create
-     Cart.create(user_id: self.id)
+     Cart.create(id: self.id, user_id: self.id)
    end
 
   has_one :cart, dependent: :destroy
