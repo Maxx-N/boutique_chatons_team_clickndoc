@@ -1,2 +1,16 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<% index = 1 %>
+<% @orders.each do |order| %>
+  <h2>Commande n° <%= index %></h2>
+
+  <% total = 0 %>
+  <% order.items.each do |item| %>
+    <% total += item.price %>
+  <% end %>
+
+  <ul>
+    <li>Date : <%= order.created_at %> </li>
+    <li>Montant : <%= total %> €</li>
+    <li>Nombre d'articles : <%= ItemOrder.where(order_id: order.id).length %></li>
+  </ul>
+  <% index += 1 %>
+<% end %>

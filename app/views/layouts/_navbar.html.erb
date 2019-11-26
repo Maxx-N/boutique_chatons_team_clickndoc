@@ -38,8 +38,9 @@
 a décommenter pour l afficher
 line40 : menu user
 line57 : menu panier
-Javascript à faire 
+Javascript à faire -->
 
+<!--
 <div class="menu-navbar" id="menu01">
   <div class="navbar-menu-user up">
     <a href="#">
@@ -57,34 +58,69 @@ Javascript à faire
   </div>
 </div>
 
+-->
+
 <div class="menu-navbar" id="menu02">
   <div class="navbar-menu-cart">
     <div class="navbar-cart-title playfair">Mon panier</div>
-    <div class="navbar-cart-number up">Nombre d articles : 12</div>
+
+    <% unless current_user %>
+
+    <div class="min up">
+      <%= link_to "Connectez vous", new_user_session_path %> ou <%= link_to "Inscrivez-vous", new_user_registration_path %> pour accéder à votre panier
+    </div>
+
+    <% else %>
+
+    <div class="navbar-cart-number up">Nombre d articles : <%=current_user.cart.items.length%></div>
 
     <div class="all-preview-cart">
 
+    <% all_cart_items = current_user.cart.items %>
+
+    <% if all_cart_items.length == 0 %>
+      <div class="min up">Vous n'avez aucun article dans votre panier</div>
+    <%else%>
+
+    <% all_cart_items.each do |item| %>
+
       <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
-        <div><img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="icone-preview"></div>
-        <div class="preview-name up">Nom du chaton<br />
-        </div>
-        <div class="preview-price">
-          0.00 € <a class="trash" href="#"><i class="fas fa-trash-alt"></i></a>
-        </div>
+      <div>
+      <%= image_tag item.image_url, :class => "icone-preview" %>
       </div>
+      
+      <div class="preview-name up">
+        <%= item.title %>
+      <br />
+      </div>
+
+      <div class="preview-price">
+        <%= item.price%> €
+
+        <%= link_to item_cart_path(ItemCart.find_by(item_id: item.id).id), :class => "trash", method: :delete do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+
+      </div>
+    </div>
+
+    <%end%>
+
+    <%end%>
 
     </div>
 
     <div class="up text-right total-cart">
         Total : 0.00 €
-      </div>
+    </div>
 
     <div class="d-flex justify-content-around footer-preview">
-        <div><a href="#" class="up">Vider le panier</a></div>
-        <div><a href="#" class="up">Voir le panier</a></div>
-      </div>
+      <div><a href="#" class="up">Vider le panier</a></div>
+      <div><a href="#" class="up">Voir le panier</a></div>
+    </div>
+
+
+    <%end%>
 
   </div>
 </div>
-
--->

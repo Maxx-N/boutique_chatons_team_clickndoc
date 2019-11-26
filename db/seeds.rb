@@ -14,15 +14,13 @@ Item.destroy_all
 ItemCart.destroy_all
 Order.destroy_all
 ItemOrder.destroy_all
-u = [] #tableau User
+u = [] #tableau User et cart
 i = [] #Tableau Item
-c = [] #tableau Cart
 o = [] #tableau Order
 
 5.times do |index|
 u << User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Name.first_name + "@yopmail.com", password: "fauxuser")
 puts "User : #{Faker::Name.first_name}, cart create"
-c << Cart.create(user_id: u[index].id)
 end
 
 def round(number,precision=2)
@@ -38,13 +36,13 @@ puts "Item: #{Faker::Book.title}"
 end
 
 20.times do
-  ItemCart.create(cart_id: c.sample.id, item_id: i.sample.id)
+  ItemCart.create(cart_id: u.sample.id, item_id: i.sample.id)
 end
 puts "ItemCart create"
 
-clength = c.length
-clength.times do |index|
-o << Order.create(cart_id: c[index].id)
+
+20.times do |index|
+o << Order.create(cart_id: u[index].id)
 end
 puts "Order Create"
 
