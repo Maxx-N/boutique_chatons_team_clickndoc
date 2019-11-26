@@ -1,8 +1,8 @@
-Bonjour <%= @user.first_name %>, votre commande a bien été prise en compte !
+Bonjour <%= @order.cart.user.first_name %> <%= @order.cart.user.last_name %>, votre commande a bien été prise en compte !
 ==========================================================
  
 Nous vous remercions pour votre commande.
  
 Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
  
-À très vite sur monsite.fr !
+À très vite sur <%= @url %> !
