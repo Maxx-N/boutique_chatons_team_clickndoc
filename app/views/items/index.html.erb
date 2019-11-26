@@ -7,20 +7,23 @@
     <%= flash[:alert] %>
   </div>
 <% end %>
+<<<<<<< HEAD
 <br>
 <%= link_to "VOIR MON PANIER", cart_path(current_user.id) %>
 <br><br>
 <%= link_to "Voir la liste de mes commandes", orders_path %>
 
+=======
+>>>>>>> master
 
-<br><br>
 
 <div class="index-card d-flex justify-content-center flex-wrap">
 
 <% @items.each do |item| %>
 
   <div class="card">
-  <img src="<%= item.image_url %>" class="card-img-top" alt="kitten-img">
+  <%= image_tag item.image_url, :class => "card-img-top" %>
+
   <div class="title-card up">
     <%= link_to "#{item.title}", item_path(item.id) %>  </div>
   <div class="price-index up">
