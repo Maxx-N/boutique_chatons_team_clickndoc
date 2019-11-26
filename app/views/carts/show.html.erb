@@ -34,7 +34,7 @@
           <div class="up text-center">Total</div>
           <h3 class="up text-center mb-3">0,00€</h3>
           <a href="#">Passer commande</a>
-          <a href="#">Vider le panier</a>
+          <a> <%= link_to "Vider le panier", cart_path(current_user.id), method: :delete %> </a>
       </div>
       <div class="right-profile">
 
