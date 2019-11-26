@@ -18,7 +18,6 @@ class CartsController < ApplicationController
       redirect_to '/'
       flash[:alert] = "Cet article est déjà dans votre panier" 
     end
-    tp current_user.cart.items, :title
   end
 
   def destroy
