@@ -29,8 +29,11 @@ def round(number,precision=2)
   ("%01.#{precision}f" %number).to_f
 end
 
-40.times do
-i << Item.create(title: Faker::Book.title, description: Faker::Lorem.sentence(word_count: 20), price: round(rand(1.00..100.99)), image_url: "https://static.wamiz.fr/images/articles/facebook/article/chaton-jouets-fb-59a3ea83c1a7d.jpg")
+cc = 1
+51.times do
+img_cat = "c#{cc}.jpg" #images aléatoires
+cc = cc + 1 #images aléatoires
+i << Item.create(title: Faker::Book.title, description: Faker::Lorem.sentence(word_count: 30), price: round(rand(1.00..100.99)), image_url: img_cat)
 puts "Item: #{Faker::Book.title}"
 end
 
