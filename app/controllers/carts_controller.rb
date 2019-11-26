@@ -1,6 +1,10 @@
 class CartsController < ApplicationController
   def show
     @cart = Cart.find(params[:id])
+    @total = 0
+    @cart.items.each do |item|
+      @total += item.price
+    end
   end
 
   def create
@@ -23,7 +27,7 @@ class CartsController < ApplicationController
 
     else 
       redirect_to '/'
-      flash[:alert] = "Connectez vous pour ajouter des photos à votre panier" 
+      flash[:alert] = "Connectez-vous pour ajouter des photos à votre panier" 
     end
 
   end
