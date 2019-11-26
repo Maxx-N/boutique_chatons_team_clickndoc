@@ -59,6 +59,16 @@ input::placeholder {
   text-transform:uppercase;
 }
 
+.flash {
+  background-color: var(--white);
+  border-radius:5px;
+  margin:20px auto;
+  width:40%;
+  text-align:center;
+  border:1px solid var(--second-color);
+  padding:10px;
+}
+
 /* footer */
 footer {
   background-color: var(--light-grey);
