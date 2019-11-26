@@ -81,10 +81,13 @@
 
 .preview-name {
   font-size:12px;
+  width:180px;
+  margin:0px 10px;
 }
 
 .preview-price {
   font-size: 18px;
+  width:120px;
   padding-right:10px;
 }
 
