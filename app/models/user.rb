@@ -9,4 +9,12 @@ class User < ApplicationRecord
 
   validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "L'email doit être renseigné au bon format (email@eamil.email) !"},
             uniqueness: {message: "Email déjà utilisé"}
+
+  # Exécution de la méthode 'welcome_send' après la création d'un user
+  after_create :welcome_send
+
+  # Méthode pour envoyer un email de bienvenue à un user
+  def welcome_send
+  	UserMailer.welcome_email(self).deliver_now
+  end
 end

@@ -14,11 +14,16 @@ class UserMailer < ApplicationMailer
 
 		# Appel à mail(). Permet d'envoyer l'email en définissant le destinataire et le sujet
 		mail(to: @user.email, subject: 'Bienvenue chez nous !')
+	  puts "----------------------------------------"
+	  puts @user
+	  puts @user.email
+	  puts "#" * 60
 	end
 
 	# Méthode permettant d'envoyer un mail de confirmation de commande à l'utilisateur
 	def confirm_order_email(user)
 		@user = user
+		@order = order
 		@url = 'http://nomdusite.fr/login'
 		mail(to: @user.email, subject: 'Confirmation de votre commande.')
 	end
