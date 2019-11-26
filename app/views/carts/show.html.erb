@@ -1,12 +1,15 @@
-<h1>Carts#show</h1>
+<%= link_to "Retour à l'index", items_path %>
+<br><br>
+<h1>Votre panier :</h1>
 
 <p>
-  <ul>
-    <% current_user.cart.items.each do |item| %>
-        <li><%= item.title %></li>
-        <li><%= item.description %></li>
+    <% @cart.items.each do |item| %>
+        <h3><%= item.image_url %></h3>
+        <ul>
+          <li><%= item.title %></li>
+          <li><%= item.description %></li>
+        </ul>
     <% end %>
-  </ul>
 </p>
 
 <%= button_to "Confirmer commande", orders_path, method: :post %>

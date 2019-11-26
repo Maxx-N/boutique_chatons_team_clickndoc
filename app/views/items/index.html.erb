@@ -3,7 +3,10 @@
 <% elsif flash[:alert] %>
   <%= flash[:alert] %>
 <% end %>
+<br>
+<%= link_to "VOIR MON PANIER", cart_path(current_user.id) %>
 
+<br><br>
 
 <h1 class="text-center">Les photos de chatons :</h1>
 <br><br>
@@ -11,8 +14,8 @@
   <h3><strong><%= link_to "#{item.title}", item_path(item.id) %></strong></h3>
   <ul>
     <li><%= item.image_url %></li>
-    <li><%= item.price %></li>
     <li><%= item.description %></li>
+    <li><%= item.price %> €</li>
   </ul>
   <%= link_to "Ajouter au panier", cart_path(item.id), method: :put %>
   <br><hr>
