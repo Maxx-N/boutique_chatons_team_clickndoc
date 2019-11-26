@@ -1,3 +1,10 @@
+<% if flash[:success] %>
+  <%= flash[:success] %>
+<% elsif flash[:alert] %>
+  <%= flash[:alert] %>
+<% end %>
+
+
 <h1 class="text-center">Les photos de chatons :</h1>
 <br><br>
 <% @items.each do |item| %>
