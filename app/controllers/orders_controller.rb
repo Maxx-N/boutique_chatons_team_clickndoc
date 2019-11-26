@@ -16,7 +16,6 @@ class OrdersController < ApplicationController
       i.order_id = o.id
       i.save
     end
-    
   end
 
   def destroy
