@@ -80,14 +80,20 @@ input::placeholder {
   border-bottom:1px dotted var(--first-color);
 }
 
-.return-index {
+.return {
   background-color: var(--white);
-  margin:10px 0px -40px 20%;
   width:200px;
   border-radius:10px;
   font-size:10px;
   padding:10px;
   text-align:center;
+}
+
+.return-index {
+  margin:10px 0px -40px 20%;
+}
+.return-profile {
+  margin:10px 0px -40px 40%;
 }
 
 /* footer */

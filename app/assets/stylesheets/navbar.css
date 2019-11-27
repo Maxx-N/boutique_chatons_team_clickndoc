@@ -55,7 +55,7 @@
 }
 .navbar-cart-number {
   font-size:10px;
-  padding-left:30px;
+  padding:3px 0px 0px 30px;
   margin-bottom:10px;
   border-bottom: 1px dotted var(--first-color);
 }
@@ -125,4 +125,13 @@ color: var(--second-color);
   border-radius:100%;
   z-index:100;
   right:15px;
+}
+
+.btn-cart-buy {
+  text-align:center;
+}
+
+.btn-cart-buy:hover{
+  background-color: var(--second-color);
+  border-radius:3px;
 }
