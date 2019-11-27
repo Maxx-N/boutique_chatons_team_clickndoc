@@ -63,6 +63,7 @@ form {
 
 .search-by-tag{
   overflow:hidden;
+  height:0px;
   background-color: var(--light-grey);
   width:100%;
   padding:0px 100px;

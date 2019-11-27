@@ -38,11 +38,10 @@ function dropdownSearchByTag() {
   let btnTag = document.getElementsByClassName("btn-drop-tag");
   let menuTag = document.getElementsByClassName("search-by-tag");
   let statusTag = false;
-  menuTag[0].style.height = "0px";
 
   function drop() {
     if (statusTag == false) {
-      menuTag[0].style.height = "";
+      menuTag[0].style.height = "auto";
       statusTag = true;
     } else if (statusTag == true) {
       menuTag[0].style.height = "0px";
