@@ -20,6 +20,7 @@ class UserDashboard < Administrate::BaseDashboard
     remember_created_at: Field::DateTime,
     first_name: Field::String,
     last_name: Field::String,
+    admin: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -49,6 +50,7 @@ class UserDashboard < Administrate::BaseDashboard
   remember_created_at
   first_name
   last_name
+  admin
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -64,6 +66,7 @@ class UserDashboard < Administrate::BaseDashboard
   remember_created_at
   first_name
   last_name
+  admin
   ].freeze
 
   # COLLECTION_FILTERS
