@@ -17,7 +17,8 @@
 
 .menu-navbar {
   position:fixed;
-  top:50px;
+  top:-600px;
+  transition-duration: 1s;
   right:20px;
   z-index:99;
 }
@@ -41,7 +42,7 @@
 /* côté cart */
 .navbar-menu-cart {
   background-color: var(--white);
-  width:350px;
+  width:400px;
   padding:10px;
   border-radius: 0px 0px 10px 10px;
 }
@@ -113,4 +114,15 @@ color: var(--second-color);
 .footer-preview a:hover{
   background-color: var(--second-color);
   border-radius:3px;
+}
+
+.nbr-items-cart {
+  position:relative;
+  top:5px;
+  font-size:10px;
+  padding:2px 1px 2px 3px;
+  background-color: var(--white);
+  border-radius:100%;
+  z-index:100;
+  right:15px;
 }

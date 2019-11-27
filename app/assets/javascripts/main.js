@@ -1,36 +1,32 @@
-// menu déroulant de la navbar
-/*
-let btnNavbar = document.getElementsByClassName("btn-navbar");
-console.log(btnNavbar);
+window.addEventListener("DOMContentLoaded", dropdownNavbar);
 
-console.log(btnNavbar[0]);
+function dropdownNavbar() {
 
-let menuNavbar = document.getElementsByClassName("menu-navbar");
-console.log(menuNavbar);
-*/
-// ----------------------------------
-/*
-let btnNavbar01 = document.getElementById("btn01");
-console.log(btnNavbar01);
+  let btnNavbar = document.getElementsByClassName("btn-navbar");
+  let menuNavbar = document.getElementsByClassName("menu-navbar");
+  let statusNavbar = [];
 
-let btnNavbar02 = document.getElementById("btn02");
-console.log(btnNavbar02);
+  for (let n = 0; n < btnNavbar.length; n++) {
+    var st = statusNavbar.push(false);
 
-let menuNavbar01 = document.getElementById("menu01");
-console.log(menuNavbar01);
+    function drop() {
+      if (statusNavbar[n] == false) {
+        for (let i = 0; i < btnNavbar.length; i++) {
+          if ( i !== n) {
+              menuNavbar[i].style.top = "";
+              statusNavbar[i] = false;
+          };
+        };
+        menuNavbar[n].style.top = "50px";
+        statusNavbar[n] = true;
+      } else if (statusNavbar[n] == true) {
+        menuNavbar[n].style.top = "";
+        statusNavbar[n] = false;
+      };
+    };
 
-let menuNavbar02 = document.getElementById("menu02");
-console.log(menuNavbar02);
+  btnNavbar[n].addEventListener("click", drop);
 
-let btn = document.getElementsByClassName("btn-navbar");
-console.log(btn);
-console.log(btn[0]);
+  };
 
-let btn2 = document.getElementById("btn01");
-console.log(btn2);
-
-let btnCart = document.getElementsByClassName("btn-cart");
-console.log(btnCart);
-btnCart[0].style.backgroundColor = "#ff1100"
-
-*/
+};
