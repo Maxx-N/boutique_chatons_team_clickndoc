@@ -6,6 +6,15 @@
   <%= @item.title %>
   </h1>
 
+  <div class="tags-show">
+  <% @tags.each do |t| %>
+    <% tag = Tag.find(t.tag_id) %>
+    <span class="tag-show up min">
+    <%= tag.name %>
+    </span>
+  <%end%>
+  </div>
+
   <div class="d-flex justify-content-between flex-nowrap">
     <div class="img-show">
     <%= image_tag @item.image_url, :class => "card-img" %>
@@ -18,14 +27,6 @@
       </p>
       
       <p class="describ">
-      Tags : <% t = ItemTag.where(item_id: @item.id) %>
-      <% tt = Tag.all %>
-      <% t.each do |tag|%>
-        <% tid = tag.tag_id %>
-        <% tt = Tag.find(tid) %>
-        <%= tt.name %>
-        <%end%>
-      <br /><br />
         <%= @item.description %>
       </p>
 

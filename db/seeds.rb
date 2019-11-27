@@ -12,11 +12,15 @@ User.destroy_all
 Cart.destroy_all
 Item.destroy_all
 ItemCart.destroy_all
+Tag.destroy_all
+ItemTag.destroy_all
 Order.destroy_all
 ItemOrder.destroy_all
+puts "destroy"
 u = [] #tableau User et cart
 i = [] #Tableau Item
 o = [] #tableau Order
+t = [] #tableau Tag
 
 1.times do
   User.create(first_name: "Staff", last_name: "Chaton", email: "staff-chaton@yopmail.com", password: "administrator", admin: true)
@@ -31,7 +35,6 @@ def round(number,precision=2)
   ("%01.#{precision}f" %number).to_f
 end
 
-t = [] #tableau Tag
   t << Tag.create(name: "Chaton")
   t << Tag.create(name: "Chat adulte")
   t << Tag.create(name: "Roux")
@@ -50,7 +53,7 @@ i << Item.create(title: Faker::Book.title, description: Faker::Lorem.sentence(wo
 puts "Item: #{Faker::Book.title}"
 end
 
-20.times do
+100.times do
   ItemTag.create(item_id: i.sample.id, tag_id: t.sample.id)
 end
 puts "ItemTag create"

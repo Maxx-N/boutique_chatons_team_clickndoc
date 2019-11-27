@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :carts, except: [:new, :edit, :index]
   resources :item_carts, only: [:destroy]
 
+  get '/:id', to: 'items#index'
+
   resources :static_pages, only: [:index]
 
 
