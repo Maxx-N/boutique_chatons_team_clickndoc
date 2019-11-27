@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :orders, except: [:new, :edit, :update]
   resources :carts, except: [:new, :edit, :index]
   resources :item_carts, only: [:destroy]
+  resources :charges, only: [:new, :create]
 
   resources :static_pages, only: [:index]
 
