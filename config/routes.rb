@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   resources :item_carts, only: [:destroy]
   resources :charges, only: [:new, :create]
 
+  get '/:id', to: 'items#index'
+
   resources :static_pages, only: [:index]
 
 

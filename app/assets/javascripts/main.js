@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", dropdownNavbar);
+window.addEventListener("DOMContentLoaded", dropdownSearchByTag);
 
 function dropdownNavbar() {
 
@@ -28,5 +29,26 @@ function dropdownNavbar() {
   btnNavbar[n].addEventListener("click", drop);
 
   };
+
+};
+
+
+function dropdownSearchByTag() {
+
+  let btnTag = document.getElementsByClassName("btn-drop-tag");
+  let menuTag = document.getElementsByClassName("search-by-tag");
+  let statusTag = false;
+
+  function drop() {
+    if (statusTag == false) {
+      menuTag[0].style.height = "auto";
+      statusTag = true;
+    } else if (statusTag == true) {
+      menuTag[0].style.height = "0px";
+     statusTag = false;
+    };
+  };
+
+  btnTag[0].addEventListener("click", drop);
 
 };
