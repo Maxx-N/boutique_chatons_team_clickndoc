@@ -31,6 +31,17 @@ def round(number,precision=2)
   ("%01.#{precision}f" %number).to_f
 end
 
+t = [] #tableau Tag
+  t << Tag.create(name: "Chaton")
+  t << Tag.create(name: "Chat adulte")
+  t << Tag.create(name: "Roux")
+  t << Tag.create(name: "Blanc")
+  t << Tag.create(name: "Gris")
+  t << Tag.create(name: "Noir")
+  t << Tag.create(name: "Rayés")
+  t << Tag.create(name: "Tricolore")
+puts "Tags create"
+
 cc = 1
 51.times do
 img_cat = "c#{cc}.jpg" #images aléatoires
@@ -38,6 +49,11 @@ cc = cc + 1 #images aléatoires
 i << Item.create(title: Faker::Book.title, description: Faker::Lorem.sentence(word_count: 30), price: round(rand(1.00..100.99)), image_url: img_cat)
 puts "Item: #{Faker::Book.title}"
 end
+
+20.times do
+  ItemTag.create(item_id: i.sample.id, tag_id: t.sample.id)
+end
+puts "ItemTag create"
 
 20.times do
   ItemCart.create(cart_id: u.sample.id, item_id: i.sample.id)
