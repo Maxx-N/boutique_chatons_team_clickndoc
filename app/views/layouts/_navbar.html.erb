@@ -70,6 +70,11 @@
       Profil
     </a>
     <%= link_to "Deconnexion", destroy_user_session_path, method: :delete%>
+    <% if current_user.admin == true %>
+      <a href="/admin">
+      Panneau d'admin
+      </a>
+      <%end%>
   <%end%>
   </div>
 </div>
