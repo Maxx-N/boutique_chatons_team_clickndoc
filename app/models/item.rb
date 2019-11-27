@@ -9,4 +9,6 @@ class Item < ApplicationRecord
   validates :price, presence: {message: "le prix doit être renseigné"},
                     numericality: {greater_than: 1, message:" Le prix doit être un chiffre entier supérieur à 1€" }
 
+  had_one_attached :item_picture
+
 end
