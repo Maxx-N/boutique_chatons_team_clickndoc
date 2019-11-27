@@ -131,8 +131,9 @@
     </div>
 
     <div class="d-flex justify-content-around footer-preview">
-      <div><%= link_to "Vider le panier", cart_path(current_user.id), :class => "up", method: :delete %></div>
       <div><%= link_to "Voir le panier", cart_path(current_user.id), :class => "up" %></div>
+      <div><%= link_to "Valider le panier", orders_path, method: :post, :class => "up" %></div>
+      <div><%= link_to "Vider le panier", cart_path(current_user.id), :class => "up", method: :delete %></div>
     </div>
 
 
