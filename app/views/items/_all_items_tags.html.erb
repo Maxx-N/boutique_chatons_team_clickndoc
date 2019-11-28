@@ -1,0 +1,6 @@
+  <% @it.each do |t| %>
+    <% @items = Item.where(id: t.item_id) %>
+    
+    <%= render 'card_item' %>
+
+  <%end%>
