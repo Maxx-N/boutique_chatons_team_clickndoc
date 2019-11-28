@@ -8,7 +8,7 @@ function dropdownNavbar() {
   let statusNavbar = [];
 
   for (let n = 0; n < btnNavbar.length; n++) {
-    var st = statusNavbar.push(false);
+    let st = statusNavbar.push(false);
 
     function drop() {
       if (statusNavbar[n] == false) {
