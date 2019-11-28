@@ -6,3 +6,9 @@ nbrItemsPreview[0].innerHTML = "<%= j render 'nbr_items_preview'%>";
 
 var nbrItemsCart = document.getElementsByClassName("nbr-items-cart");
 nbrItemsCart[0].innerHTML = "<%= j render 'nbr_items'%>";
+
+var totalCart = document.getElementsByClassName("total-cart");
+totalCart[0].innerHTML = "Total : <%= j render 'total_cart' %> €"
+
+var totalCart2 = document.getElementsByClassName("min-total");
+totalCart2[0].innerHTML = "<%= j render 'total_cart' %> €"
