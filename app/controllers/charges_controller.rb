@@ -45,7 +45,6 @@ class ChargesController < ApplicationController
       io.save
     end
     current_user.cart.item_carts.destroy_all
-    redirect_to "/carts/#{current_user.id}"
 
 
   rescue Stripe::CardError => e
