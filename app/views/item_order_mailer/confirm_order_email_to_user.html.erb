@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <% if @user.first_name != nil %>
+      <h1>Bonjour <%= @user.first_name %> <%=  %>, votre commande a bien été prise en compte !</h1>
+    <% else %>
+      <h1>Bonjour cher utilisateur, votre commande a bien été prise en compte !</h1>
+    <% end %>
+
+    <p>
+      Nous vous remercions de votre commande.
+    </p>
+    
+    <!-- Affichage des images de chats commandées par l'utilisateur -->
+    <p>Voici l'article que vous avez commandé : </p>
+    <div>
+      <p><%= @item.image_url %></p>
+      <p><%= image_tag @item.image_url %></p>
+      <p><%= @item.price %> €</p> 
+    </div>
+
+    <p>
+      Pour accéder à ton espace client, connecte-toi via : <%=  %>.
+    </p>
+    <p> À très vite sur KittyPics.fr !</p>
+  </body>
+</html>

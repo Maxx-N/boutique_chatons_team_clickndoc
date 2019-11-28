@@ -1,3 +1,12 @@
+<!-- total panier -->
+<% if current_user %>
+<% @cart = current_user.cart 
+  @total = 0
+  @cart.items.each do |item|
+    @total += item.price
+  end %>
+  <%end%>
+
 <!-- navbar -->
 <nav class="up navbar navbar-expand-lg navbar-light bg-light">
 
@@ -17,65 +26,59 @@
 
     <span class="navbar-text d-flex">
 
-    <!-- lien provisoire -->
-      <div class="btn-navbar" id="btn01">
+      <div class="btn-navbar">
         <i class="fas fa-user"></i>
-        <a href="/users/sign_in" style="color: var(--first-color) !important;">
-        Connexion
-        </a>
+        <% unless current_user %>
+        Invité
+        <% else %>
+          <% if current_user.first_name %>
+            <%= current_user.first_name %>
+            <% else %>
+            Utilisateur
+            <%end%>
+        <%end%>
       </div>
-      <% if current_user %>
-      <div class="btn-navbar" id="btn01">
-        <i class="fas fa-user"></i>
-        <a href="/users/<%= current_user.id%>" style="color: var(--first-color) !important;">
-        Son profil
-        </a>
-      </div>
-      <% end%>
 
-      <div class="btn-navbar" id="btn02">
-        <i class="fas fa-shopping-cart"></i>
+      <div class="btn-navbar">
+        <i class="fas fa-shopping-cart">
+        <% if current_user %>
+        <span class="nbr-items-cart">
+        <%= @cart.items.length %>
+        </span>
+        <%end%></i> 
         Panier
+        <% if current_user %> : 
+        <span class="min-total"><%= @total %> €</span>
+        <%end%>
       </div>
 
     </span>
   </div>
 </nav>
 
-<!--  parties du menu déroulant commenté :
-a décommenter pour l afficher
-line40 : menu user
-line57 : menu panier
-Javascript à faire -->
-
-<!--
 <div class="menu-navbar" id="menu01">
   <div class="navbar-menu-user up">
-    <a href="#">
+  <% unless current_user %>
+    <a href="/users/sign_in">
       Connexion
     </a>
-    <a href="#">
+    <a href="/users/sign_up">
       Inscription
     </a>
-    <a href="#">
+  <% else %>
+    <a href="/users/<%= current_user.id%>">
       Profil
     </a>
-    <a href="#">
-      Déconnexion
-    </a>
+    <%= link_to "Deconnexion", destroy_user_session_path, method: :delete%>
+    <% if current_user.admin == true %>
+      <a href="/admin">
+      Panneau d'admin
+      </a>
+      <%= link_to 'ajouter une photo', new_item_path %>
+      <%end%>
+  <%end%>
   </div>
 </div>
-
--->
-
-<% if current_user
-  @cart = current_user.cart 
-  @total = 0
-  @cart.items.each do |item|
-    @total += item.price
-  end
-end
-%>
 
 <div class="menu-navbar" id="menu02">
   <div class="navbar-menu-cart">
@@ -97,13 +100,19 @@ end
 
     <% if all_cart_items.length == 0 %>
       <div class="min up">Vous n'avez aucun article dans votre panier</div>
-    <%else%>
+    <%else%> 
 
     <% all_cart_items.each do |item| %>
 
-      <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+    <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
       <div>
-      <%= image_tag item.image_url, :class => "icone-preview" %>
+
+      <%if item.image_url == nil %>
+        <%= image_tag item.item_picture, alt: 'item_picture',:class => "icone-preview" %>
+      <%else%>
+        <%= image_tag item.image_url, :class => "icone-preview" %>
+      <% end %>
+
       </div>
 
       <div class="preview-name up">
@@ -114,7 +123,7 @@ end
       <div class="preview-price">
         <%= item.price%> €
 
-        <%= link_to item_cart_path(ItemCart.find_by(item_id: item.id).id), :class => "trash", method: :delete do %>
+        <%= link_to item_cart_path(ItemCart.find_by(item_id: item.id).id), :class => "trash", method: :delete, :remote => true do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
 
@@ -132,9 +141,12 @@ end
     </div>
 
     <div class="d-flex justify-content-around footer-preview">
-      <div><%= link_to "Vider le panier", cart_path(current_user.id), :class => "up", method: :delete %></div>
       <div><%= link_to "Voir le panier", cart_path(current_user.id), :class => "up" %></div>
+      <div><%= link_to "Vider le panier", cart_path(current_user.id), :class => "up", method: :delete, :remote => true %></div>
     </div>
+    
+    <div class="up btn-cart-buy"><%= link_to "Valider le panier", new_charge_path %></div>
+
 
 
     <%end%>

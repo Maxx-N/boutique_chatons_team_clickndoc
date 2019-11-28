@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kitten pics shop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/a05a567acc.js" crossorigin="anonymous"></script>
+    
+  </head>
+
+  <%= render 'layouts/stripe_navbar' %>
+  <%= render 'layouts/min_header' %>
+
+  <body>
+  <%= render 'layouts/return_index' %>
+  <div class="form-charge">
+    <%= yield %>
+  </div>
+  </body>
+
+  <%= render 'layouts/footer' %>
+
+</html>

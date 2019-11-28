@@ -4,8 +4,8 @@ class ItemOrder < ApplicationRecord
 
 
   # Exécution de la méthode 'order_send_to_user' après la création d'un item (il y aura autant d'emails que d'items dans la commande)
-  #after_create :order_send_to_user
-  #after_create :order_send_to_admin
+  after_create :order_send_to_user
+  after_create :order_send_to_admin
 
   # Méthode pour envoyer un email de confirmation de commande à l'utilisateur
   def order_send_to_user

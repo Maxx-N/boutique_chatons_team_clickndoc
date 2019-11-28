@@ -16,7 +16,7 @@
           <h3 class="up text-center mb-3">
               <%= @total %> €
           </h3>
-          <%= link_to "Passer commande", orders_path, method: :post %>
+          <%= link_to "Passer commande", new_charge_path %>
           <%= link_to "Vider le panier", cart_path(current_user.id), method: :delete %>
       </div>
       <div class="right-profile">
@@ -29,8 +29,13 @@
 
       <div class="w-100 preview-cart align-items-center d-flex justify-content-between flex-nowrap">
           <div class="view_items">
-            <%= image_tag item.image_url, :class => "icone-preview" %>
 
+          <%if item.image_url == nil %>
+          <%= image_tag item.item_picture, alt: 'item_picture',:class => "icone-preview" %>
+        <%else%>
+          <%= image_tag item.image_url, :class => "icone-preview" %>
+        <% end %>
+        
             <%= link_to item_path(item.id), :class => "trash" do %>
               <i class="fas fa-search"></i>
             <%end%>

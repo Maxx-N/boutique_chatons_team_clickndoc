@@ -1,11 +1,12 @@
-Bonjour <%=  %> <%=  %>, votre commande a bien été prise en compte !
+<% if @user.first_name != nil %>
+      Bonjour <%= @user.first_name %> <%=  %>, votre commande a bien été prise en compte !
+<% else %>
+      Bonjour cher administrateur, une commande vient d'être passée !
+<% end %>
 ==========================================================
  
-Nous vous remercions pour votre commande.
+Voici l'article qui a été commandé :
+<%= @item.title %>
+<%= @item.price %> €
 
-Voici les articles que vous avez commandés :
-
- 
-Pour accéder à ton espace client, connecte-toi via : <%=  %>.
- 
-À très vite sur <%=  %> !
+Encore un pigeon qui s'est fait avoir à commander des images de chatons super chères que l'on peut trouver en deux clics sur internet ^^

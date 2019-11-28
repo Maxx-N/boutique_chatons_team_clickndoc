@@ -1,9 +1,16 @@
-Bonjour <%=  %> <%=  %>, votre commande a bien été prise en compte !
+<% if @user.first_name != nil %>
+Bonjour <%= @user.first_name %> <%=  %>, votre commande a bien été prise en compte !
+<% else %>
+Bonjour cher utilisateur, votre commande a bien été prise en compte !
+<% end %>
 ==========================================================
  
 Nous vous remercions pour votre commande.
 
 Voici les articles que vous avez commandés :
+<%= @item.image_url %>
+<%= image_tag @item.image_url %>
+<%= @item.price %> €
 
  
 Pour accéder à ton espace client, connecte-toi via : <%=  %>.

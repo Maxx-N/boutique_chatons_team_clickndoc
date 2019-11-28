@@ -5,7 +5,7 @@ class Order < ApplicationRecord
 
 
   # Exécution de la méthode 'order_send_to_user' après la création d'une commande
-  after_create :order_send_to_user2 
+  #after_create :order_send_to_user2 
 
   # Méthode pour envoyer un email de confirmation de commande à l'utilisateur
   def order_send_to_user2

@@ -16,11 +16,14 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:show]
-  resources :items, only: [:show, :create, :index]
+  resources :users, only: [:show, :edit, :update]
+  resources :items
   resources :orders, except: [:new, :edit, :update]
   resources :carts, except: [:new, :edit, :index]
   resources :item_carts, only: [:destroy]
+  resources :charges, only: [:new, :create]
+
+  get '/:id', to: 'items#index'
 
   resources :static_pages, only: [:index]
 

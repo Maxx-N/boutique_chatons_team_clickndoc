@@ -11,13 +11,20 @@
 .btn-navbar {
   color:var(--first-color);
   margin-left:30px;
+  border-radius: 50px;
+  padding:3px 10px;
+}
+
+.btn-navbar:hover {
+  background-color: var(--mid-grey);
 }
 
 /* éléments déroulants de la navbar */
 
 .menu-navbar {
   position:fixed;
-  top:50px;
+  top:-600px;
+  transition-duration: 1s;
   right:20px;
   z-index:99;
 }
@@ -41,7 +48,7 @@
 /* côté cart */
 .navbar-menu-cart {
   background-color: var(--white);
-  width:350px;
+  width:400px;
   padding:10px;
   border-radius: 0px 0px 10px 10px;
 }
@@ -54,7 +61,7 @@
 }
 .navbar-cart-number {
   font-size:10px;
-  padding-left:30px;
+  padding:3px 0px 0px 30px;
   margin-bottom:10px;
   border-bottom: 1px dotted var(--first-color);
 }
@@ -111,6 +118,26 @@ color: var(--second-color);
   padding:3px;
 }
 .footer-preview a:hover{
+  background-color: var(--second-color);
+  border-radius:3px;
+}
+
+.nbr-items-cart {
+  position:relative;
+  top:5px;
+  font-size:10px;
+  padding:2px 1px 2px 3px;
+  background-color: var(--white);
+  border-radius:100%;
+  z-index:100;
+  right:15px;
+}
+
+.btn-cart-buy {
+  text-align:center;
+}
+
+.btn-cart-buy:hover{
   background-color: var(--second-color);
   border-radius:3px;
 }

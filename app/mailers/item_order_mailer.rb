@@ -3,7 +3,7 @@ class ItemOrderMailer < ApplicationMailer
 
 
 	def confirm_order_email_to_user(itemorder)
-		#@itemorder = itemorder
+		@itemorder = itemorder
 
 		
 

@@ -6,9 +6,22 @@
   <%= @item.title %>
   </h1>
 
+  <div class="tags-show">
+  <% @tags.each do |t| %>
+    <% tag = Tag.find(t.tag_id) %>
+    <span class="tag-show up min">
+    <%= tag.name %>
+    </span>
+  <%end%>
+  </div>
+
   <div class="d-flex justify-content-between flex-nowrap">
     <div class="img-show">
-    <%= image_tag @item.image_url, :class => "card-img" %>
+      <%if @item.image_url == nil %>
+        <%= image_tag @item.item_picture, alt: 'item_picture',:class => "card-img" %>
+      <%else%>
+        <%= image_tag @item.image_url, :class => "card-img" %>
+      <% end %>
     </div>
 
     <div class="d-flex flex-column justify-content-between right-show">
@@ -16,7 +29,7 @@
         <span class="green">Taille de l'image :</span> 2000*1500px<br />
         <span class="green">Photographe :</span> pexel.com
       </p>
-      
+
       <p class="describ">
         <%= @item.description %>
       </p>
@@ -31,4 +44,5 @@
     </div>
   </div>
 
+  </div>
 </div>
