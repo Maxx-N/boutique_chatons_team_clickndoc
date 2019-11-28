@@ -21,6 +21,11 @@
   object-fit: cover;
 }
 
+.card-img-top:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 5px 5px var(--first-color);
+}
+
 .card-body {
   padding:5px 20px;
 }
