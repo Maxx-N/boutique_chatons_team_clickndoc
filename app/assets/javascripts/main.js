@@ -26,7 +26,7 @@ function dropdownNavbar() {
       };
     };
 
-  btnNavbar[n].addEventListener("click", drop);
+  btnNavbar[n].addEventListener("mouseover", drop);
 
   };
 
@@ -49,6 +49,6 @@ function dropdownSearchByTag() {
     };
   };
 
-  btnTag[0].addEventListener("click", drop);
+  btnTag[0].addEventListener("mouseover", drop);
 
 };
