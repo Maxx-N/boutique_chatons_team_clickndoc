@@ -35,7 +35,7 @@ Envie d'un chat en particulier ?
 
 <% all_tags = Tag.all %>
 <% all_tags.each do |tag| %>
-  <a href="/<%= tag.id%>">
+  <a href="/<%= tag.id%>" data-remote="true">
   <%= tag.name %>
   </a>
 <%end%>

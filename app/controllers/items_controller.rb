@@ -3,6 +3,10 @@ class ItemsController < ApplicationController
     all_item = []
     if params[:id]
       @it = ItemTag.where(tag_id: params[:id])
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { }
+      end
     else
       @items = Item.all
     end
