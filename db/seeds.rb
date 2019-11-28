@@ -39,7 +39,7 @@ def create_seed
   end
   cc = 1
   51.times do
-  img_cat = "c#{cc}.jpg" #image de chat
+  img_cat = "https://kitten-pics-shop.s3.eu-west-3.amazonaws.com/c#{cc}.jpg" #image de chat
   cc = cc + 1 #image de chat
   i << Item.create(title: Faker::Book.title, description: Faker::Lorem.sentence(word_count: 30), price: round(rand(1.00..100.99)), image_url: img_cat)
   puts "Item: #{Faker::Book.title}"
@@ -88,13 +88,4 @@ def create_seed
 end
 destroy_seed
 create_seed
-
-
-
-
-
-
-
-
-
 
