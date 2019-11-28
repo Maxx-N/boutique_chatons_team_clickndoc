@@ -1,0 +1,68 @@
+<!-- total panier -->
+<% if current_user %>
+<% @cart = current_user.cart 
+  @total = 0
+  @cart.items.each do |item|
+    @total += item.price
+  end %>
+  <%end%>
+
+<!-- navbar -->
+<nav class="up navbar navbar-expand-lg navbar-light bg-light">
+
+  <a class="navbar-brand" href="/">Kitten pics shop</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+
+    <span class="navbar-text d-flex">
+
+      <div class="btn-navbar">
+        <i class="fas fa-user"></i>
+        <% unless current_user %>
+        Invité
+        <% else %>
+          <% if current_user.first_name %>
+            <%= current_user.first_name %>
+            <% else %>
+            Utilisateur
+            <%end%>
+        <%end%>
+      </div>
+
+    </span>
+  </div>
+</nav>
+
+<div class="menu-navbar" id="menu01">
+  <div class="navbar-menu-user up">
+  <% unless current_user %>
+    <a href="/users/sign_in">
+      Connexion
+    </a>
+    <a href="/users/sign_up">
+      Inscription
+    </a>
+  <% else %>
+    <a href="/users/<%= current_user.id%>">
+      Profil
+    </a>
+    <%= link_to "Deconnexion", destroy_user_session_path, method: :delete%>
+    <% if current_user.admin == true %>
+      <a href="/admin">
+      Panneau d'admin
+      </a>
+      <%= link_to 'ajouter une photo', new_item_path %>
+      <%end%>
+  <%end%>
+  </div>
+</div>

@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<div class="form-charge">
+<h1 class="playfair">Ajouter une image de chaton</h1>
+<div class="separator"> </div>
+
     <%= form_tag url_for(action: 'create'), method: "post", multipart: true do %>
       <%= label_tag :title, "Titre de l'image" %>
       <%= text_field_tag 'title', @item.title %>
@@ -24,5 +21,5 @@
 
       <%= submit_tag "Creation de l'offre" %>
     <% end %>
-  </body>
-</html>
+
+    </div>

@@ -49,6 +49,6 @@ function dropdownSearchByTag() {
     };
   };
 
-  btnTag[0].addEventListener("mouseover", drop);
+  btnTag[0].addEventListener("click", drop);
 
 };

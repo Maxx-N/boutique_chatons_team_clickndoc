@@ -3,12 +3,12 @@ class Item < ApplicationRecord
   has_many :carts, through: :item_carts, dependent: :destroy
   has_many :item_orders, dependent: :destroy
   has_many :orders, through: :item_orders, dependent: :destroy
-<<<<<<< HEAD
+
   has_one_attached :item_picture
-=======
+
   has_many :item_tags, dependent: :destroy
   has_many :tags, through: :item_tags, dependent: :destroy
->>>>>>> master
+
 
   validates :title, presence: {message: "Le nom du produit doit être renseigné"},
                     uniqueness: {message: "Nom du produit déjà utilisé"}
