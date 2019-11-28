@@ -1,5 +1,6 @@
+<% @items.each do |item| %>
         <div class="card">
-        <% @items.each do |item| %>
+
           <%if item.image_url == nil %>
             <%= image_tag item.item_picture, alt: 'item_picture',:class => "card-img-top" %>
           <%else%>
@@ -19,5 +20,6 @@
                 <i class="fas fa-shopping-cart"></i>
               </div>
             <% end %>
-        <% end %>
+
         </div>
+  <% end %>

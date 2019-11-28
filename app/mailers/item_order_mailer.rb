@@ -5,19 +5,13 @@ class ItemOrderMailer < ApplicationMailer
 	def confirm_order_email_to_user(itemorder)
 		@itemorder = itemorder
 
-		
+
 
 
 
 		# id de l'objet itemorder
 		@itemorder_id = itemorder.id
-		puts "1"*100
-		puts "L'id de l'objet itemorder est : #{@itemorder_id}"
-		puts "2"*100
 
-		puts @itemorder.item_id
-		puts "3"*100
-		
     # Récupération de l'id de l'order
     @order_id = itemorder.order_id
     # Récupération de l'order correspondant à cet id
@@ -36,10 +30,6 @@ class ItemOrderMailer < ApplicationMailer
 
 		# item lié à l'objet itemorder:
 		@item = Item.find(@itemorder.item_id)
-		puts "L'item est #{@item}"
-		puts "L'url de l'image correspondant à #{@item} est : #{@item.image_url}"
-		puts "Le titre correspondant à #{@item} est : #{@item.title}"
-		puts "Le prix correspondant à #{@item} est : #{@item.price}"
 		mail(to: @user.email, subject: "Confirmation de votre commande.")
 	end
 
@@ -50,13 +40,7 @@ class ItemOrderMailer < ApplicationMailer
 
 		# id de l'objet itemorder
 		@itemorder_id = itemorder.id
-		puts "1"*100
-		puts "L'id de l'objet itemorder est : #{@itemorder_id}"
-		puts "2"*100
 
-		puts @itemorder.item_id
-		puts "3"*100
-		
     # Récupération de l'id de l'order
     @order_id = itemorder.order_id
     # Récupération de l'order correspondant à cet id
@@ -75,10 +59,6 @@ class ItemOrderMailer < ApplicationMailer
 
 		# item lié à l'objet itemorder:
 		@item = Item.find(@itemorder.item_id)
-		puts "L'item est #{@item}"
-		puts "L'url de l'image correspondant à #{@item} est : #{@item.image_url}"
-		puts "Le titre correspondant à #{@item} est : #{@item.title}"
-		puts "Le prix correspondant à #{@item} est : #{@item.price}"
 	  mail(to: "staff-chaton@yopmail.com", subject: "Une commande vient d'être passée.")
 	end
 

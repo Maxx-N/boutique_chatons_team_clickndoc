@@ -13,7 +13,7 @@ Kitty Pics App on Ruby on Rails
 
     - rails db:create db:migrate db:seed
 
-2- CREATE A FILE ".env" AND PUT YOUR API KEYS : 
+2- CREATE A FILE ".env" AND PUT YOUR API KEYS :
 
     - PUBLISHABLE_KEY=your_stripe_api_key
     - SECRET_KEY=your_stripe_secret_key
@@ -26,9 +26,10 @@ Kitty Pics App on Ruby on Rails
 
     - rails server
 
-4- IN THE NAVIGATOR : 
+4- IN THE NAVIGATOR :
 
     - http://localhost:3000/
+    - heroku: https://kitten-pics-shop.herokuapp.com/
 
 **What a user can do with this app :**
 
