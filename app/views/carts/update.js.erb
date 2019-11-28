@@ -1,3 +1,7 @@
 alert("La photo a bien été ajoutée à votre panier");
-let nbrItemsCart = document.getElementsByClassName("nbr-items-cart");
+var nbrItemsCart = document.getElementsByClassName("nbr-items-cart");
 nbrItemsCart[0].innerHTML = "<%= j render 'nbr_items', cart: @cart %>";
+
+var previewCart = document.getElementsByClassName("all-preview-cart");
+console.log(previewCart);
+previewCart[0].innerHTML = "<%= j render 'new_item_cart' %>";

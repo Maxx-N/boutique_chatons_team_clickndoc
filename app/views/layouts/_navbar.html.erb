@@ -99,11 +99,11 @@
 
     <% if all_cart_items.length == 0 %>
       <div class="min up">Vous n'avez aucun article dans votre panier</div>
-    <%else%>
+    <%else%> 
 
     <% all_cart_items.each do |item| %>
 
-      <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+    <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
       <div>
       <%= image_tag item.image_url, :class => "icone-preview" %>
       </div>
