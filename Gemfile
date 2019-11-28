@@ -70,3 +70,4 @@ gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
 gem "administrate"
+gem "aws-sdk-s3", require: false
