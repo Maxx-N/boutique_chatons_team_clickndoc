@@ -55,3 +55,21 @@ form {
   width:70%;
   margin:auto;
 }
+
+.btn-drop-tag {
+  text-align:left;
+  padding-left: 20%;
+}
+
+.search-by-tag{
+  overflow:hidden;
+  height:0px;
+  background-color: var(--light-grey);
+  width:100%;
+  padding:0px 100px;
+}
+
+.search-by-tag a{
+  text-shadow:1px 0px 0px var(--white);
+  margin: 10px;
+}

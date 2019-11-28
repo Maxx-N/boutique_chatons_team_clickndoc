@@ -1,0 +1,31 @@
+<% all_cart_items = current_user.cart.items %>
+
+<% if all_cart_items.length == 0 %>
+<div class="min up">Vous n'avez aucun article dans votre panier</div>
+<%else%> 
+
+<% all_cart_items.each do |item| %>
+
+<div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+<div>
+<%= image_tag item.image_url, :class => "icone-preview" %>
+</div>
+
+<div class="preview-name up">
+  <%= item.title %>
+<br />
+</div>
+
+<div class="preview-price">
+  <%= item.price%> €
+
+  <%= link_to item_cart_path(ItemCart.find_by(item_id: item.id).id), :class => "trash", method: :delete, :remote => true do %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
+
+</div>
+</div>
+
+<%end%>
+
+<%end%>

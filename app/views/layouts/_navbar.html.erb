@@ -48,7 +48,7 @@
         <%end%></i> 
         Panier
         <% if current_user %> : 
-        <%= @total %> €
+        <span class="min-total"><%= @total %> €</span>
         <%end%>
       </div>
 
@@ -99,11 +99,11 @@
 
     <% if all_cart_items.length == 0 %>
       <div class="min up">Vous n'avez aucun article dans votre panier</div>
-    <%else%>
+    <%else%> 
 
     <% all_cart_items.each do |item| %>
 
-      <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+    <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
       <div>
       <%= image_tag item.image_url, :class => "icone-preview" %>
       </div>
@@ -116,7 +116,7 @@
       <div class="preview-price">
         <%= item.price%> €
 
-        <%= link_to item_cart_path(ItemCart.find_by(item_id: item.id).id), :class => "trash", method: :delete do %>
+        <%= link_to item_cart_path(ItemCart.find_by(item_id: item.id).id), :class => "trash", method: :delete, :remote => true do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
 
@@ -135,10 +135,10 @@
 
     <div class="d-flex justify-content-around footer-preview">
       <div><%= link_to "Voir le panier", cart_path(current_user.id), :class => "up" %></div>
-      <div><%= link_to "Vider le panier", cart_path(current_user.id), :class => "up", method: :delete %></div>
+      <div><%= link_to "Vider le panier", cart_path(current_user.id), :class => "up", method: :delete, :remote => true %></div>
     </div>
     
-    <div class="up btn-cart-buy"><%= link_to "Valider le panier", orders_path, method: :post%></div>
+    <div class="up btn-cart-buy"><%= link_to "Valider le panier", new_charge_path %></div>
 
 
 

@@ -1,7 +1,8 @@
 <div class="index-card d-flex justify-content-center flex-wrap">
 
-<% @items.each do |item| %>
+<% if params[:id] %>
 
+<<<<<<< HEAD
   <div class="card">
     <%if item.image_url == nil %>
       <%= image_tag item.item_picture, alt: 'item_picture',:class => "card-img" %>
@@ -22,7 +23,19 @@
   <% end %>
 
 </div>
+=======
+  <% @it.each do |t| %>
+    <% @items = Item.where(id: t.item_id) %>
+    
+    <%= render 'card_item' %>
 
-<% end %>
+  <%end%>
+
+<% else %>
+>>>>>>> master
+
+  <%= render 'card_item' %>
+
+  <% end%> <!-- fin générale du if params -->
 
 </div>

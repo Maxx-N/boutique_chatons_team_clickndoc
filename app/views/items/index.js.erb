@@ -1,0 +1,4 @@
+var all_card = document.getElementsByClassName("index-card");
+console.log(all_card[0]);
+
+all_card[0].innerHTML = "<%= j render 'all_items_tags', cart: @cart %>";

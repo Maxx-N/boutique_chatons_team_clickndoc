@@ -14,6 +14,7 @@
 </a>
       
 <!-- barre de recherche -->
+<!--
 <div class="second-bar d-flex justify-content-around">
   <div width="100%"></div>
   <div style="width:550px;">
@@ -22,6 +23,23 @@
         <button class="search btn my-2 my-sm-0" style="background-color:var(--light-grey);" type="submit">Rechercher</button>
     </form>
   </div>
+</div>
+-->
+
+<!-- barre de recherche des tags -->
+<div class="second-bar btn-drop-tag up">
+Envie d'un chat en particulier ?
+</div>
+
+<div class="search-by-tag up">
+
+<% all_tags = Tag.all %>
+<% all_tags.each do |tag| %>
+  <a href="/<%= tag.id%>" data-remote="true">
+  <%= tag.name %>
+  </a>
+<%end%>
+
 </div>
 
 <%= render 'layouts/flash'%>

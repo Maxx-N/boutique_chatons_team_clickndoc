@@ -66,8 +66,12 @@ gem 'faker'
 gem 'table_print'
 gem 'letter_opener'
 gem 'colorize'
-gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
 gem "administrate"
+<<<<<<< HEAD
 gem "aws-sdk-s3", require: false
+=======
+gem 'dotenv-rails'
+
+>>>>>>> master
