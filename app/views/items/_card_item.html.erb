@@ -2,12 +2,13 @@
     <% @items.each do |item| %>
 
         <div class="card">
-          <%if item.image_url == nil %>
-            <%= image_tag item.item_picture, alt: 'item_picture',:class => "card-img" %>
-          <%else%>
-            <%= image_tag item.image_url, :class => "card-img-top" %>
-          <% end %>
 
+        <%if item.image_url == nil %>
+          <%= image_tag item.item_picture, alt: 'item_picture',:class => "card-img-top" %>
+        <%else%>
+          <%= image_tag item.image_url, :class => "card-img-top" %>
+        <% end %>
+    
           <div class="title-card up">
             <%= link_to "#{item.title}", item_path(item.id) %>
           </div>

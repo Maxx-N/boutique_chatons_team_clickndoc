@@ -2,26 +2,6 @@
 
 <% if params[:id] %>
 
-  <div class="card">
-    <%if item.image_url == nil %>
-      <%= image_tag item.item_picture, alt: 'item_picture',:class => "card-img" %>
-    <%else%>
-      <%= image_tag item.image_url, :class => "card-img-top" %>
-    <% end %>
-  <div class="title-card up">
-    <%= link_to "#{item.title}", item_path(item.id) %>  </div>
-  <div class="price-index up">
-  <%= item.price %> €
-  </div>
-  <a href="#" style="color:var(--dark-grey);">
-
-  <%= link_to cart_path(item.id), method: :put do %>
-    <div class="add-to-cart">
-      <i class="fas fa-shopping-cart"></i>
-    </div>
-  <% end %>
-
-</div>
   <% @it.each do |t| %>
     <% @items = Item.where(id: t.item_id) %>
 
@@ -33,6 +13,6 @@
 
   <%= render 'card_item' %>
 
-  <% end%> <!-- fin générale du if params -->
+<% end%> <!-- fin générale du if params -->
 
 </div>
