@@ -7,12 +7,12 @@ function dropdownNavbar() {
   var menuNavbar = document.getElementsByClassName("menu-navbar");
   var statusNavbar = [];
 
-    for (let n = 0; n < btnNavbar.length; n++) {
+    for (var n = 0; n < btnNavbar.length; n++) {
       var st = statusNavbar.push(false);
 
       function drop() {
         if (statusNavbar[n] == false) {
-          for (let i = 0; i < btnNavbar.length; i++) {
+          for (var i = 0; i < btnNavbar.length; i++) {
             if ( i !== n) {
                 menuNavbar[i].style.top = "";
                 statusNavbar[i] = false;
