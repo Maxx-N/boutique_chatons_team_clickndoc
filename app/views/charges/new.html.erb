@@ -5,12 +5,30 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Montant : <%= @total %> €</span>
-    </label>
+
+    <h1 class="playfair">Récapitulatif</h1>
+    <% @cart.items.each do |item| %>
+     
+    <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+      <div>
+      <%= image_tag item.image_url, :class => "icone-preview" %>
+      </div>
+
+      <div class="preview-name up">
+        <%= item.title %>
+      <br />
+      </div>
+
+      <div class="preview-price">
+        <%= item.price%> €
+      </div>
+    </div>
+    <% end %>
+    <br />
+      <h3 class="up">Montant total : <%= @total %> €</h3>
   </article>
   
-
+<br />
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Achat de photos de chatons"

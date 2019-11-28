@@ -74,6 +74,7 @@
       <a href="/admin">
       Panneau d'admin
       </a>
+      <%= link_to 'ajouter une photo', new_item_path %>
       <%end%>
   <%end%>
   </div>
@@ -105,7 +106,13 @@
 
     <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
       <div>
-      <%= image_tag item.image_url, :class => "icone-preview" %>
+
+      <%if item.image_url == nil %>
+        <%= image_tag item.item_picture, alt: 'item_picture',:class => "icone-preview" %>
+      <%else%>
+        <%= image_tag item.image_url, :class => "icone-preview" %>
+      <% end %>
+
       </div>
 
       <div class="preview-name up">
