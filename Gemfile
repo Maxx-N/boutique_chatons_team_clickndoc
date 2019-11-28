@@ -40,7 +40,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development do
@@ -70,3 +69,5 @@ gem 'colorize'
 gem 'devise'
 gem 'stripe'
 gem "administrate"
+gem 'dotenv-rails'
+
