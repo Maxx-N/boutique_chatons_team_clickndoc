@@ -1,5 +1,6 @@
 class ItemCartsController < ApplicationController
   def destroy
+    puts "*"*100
     @item_cart = ItemCart.find(params[:id])
     @item_cart.destroy
 

@@ -8,7 +8,7 @@ var nbrItemsPreview = document.getElementsByClassName("navbar-cart-number");
 nbrItemsPreview[0].innerHTML = "<%= j render './carts/nbr_items_preview'%>";
 
 var totalCart = document.getElementsByClassName("total-cart");
-totalCart[0].innerHTML = "Total : <%= j render 'total_cart' %> €"
+totalCart[0].innerHTML = "Total : <%= j render './carts/total_cart' %> €"
 
 var totalCart2 = document.getElementsByClassName("min-total");
-totalCart2[0].innerHTML = "<%= j render 'total_cart' %> €"
+totalCart2[0].innerHTML = "<%= j render './carts/total_cart' %> €"
