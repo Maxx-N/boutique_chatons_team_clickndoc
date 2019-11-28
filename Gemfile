@@ -69,9 +69,5 @@ gem 'colorize'
 gem 'devise'
 gem 'stripe'
 gem "administrate"
-<<<<<<< HEAD
 gem "aws-sdk-s3", require: false
-=======
 gem 'dotenv-rails'
-
->>>>>>> master

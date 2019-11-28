@@ -2,7 +2,6 @@
 
 <% if params[:id] %>
 
-<<<<<<< HEAD
   <div class="card">
     <%if item.image_url == nil %>
       <%= image_tag item.item_picture, alt: 'item_picture',:class => "card-img" %>
@@ -23,16 +22,14 @@
   <% end %>
 
 </div>
-=======
   <% @it.each do |t| %>
     <% @items = Item.where(id: t.item_id) %>
-    
+
     <%= render 'card_item' %>
 
   <%end%>
 
 <% else %>
->>>>>>> master
 
   <%= render 'card_item' %>
 
