@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+
+
+    <!-- ------------------------------ -->
+
+    <% @all_items_cart.each do |index| %>
+          <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
+              <div>
+                <%if index.item.image_url == nil %>
+                  <%= image_tag index.item.item_picture, alt: 'item_picture',:class => "icone-preview" %>
+                <%else%>
+                  <%= image_tag index.item.image_url, :class => "icone-preview" %>
+                <% end %>
+              </div>
+              <div class="preview-name up">
+               <%= index.item.title %><br />
+              </div>
+              <div class="preview-price min">
+                <%= index.item.price %> €
+              </div>
+            </div>
+            <% end %>
+
+    <p>
+      Nous vous remercions de votre commande.
+    </p>
+    
+    <!-- Affichage des images de chats commandées par l'utilisateur -->
+
+
+
+    <p>
+      Pour accéder à ton espace client, connecte-toi via : <%=  %>.
+    </p>
+    <p> À très vite sur monsite.fr !
+  </body>
+</html>

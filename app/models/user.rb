@@ -7,7 +7,7 @@ class User < ApplicationRecord
   after_create :cart_create
 
    def cart_create
-     Cart.create(user_id: self.id)
+     Cart.create(id: self.id, user_id: self.id)
    end
 
   has_one :cart, dependent: :destroy
@@ -17,7 +17,7 @@ class User < ApplicationRecord
             uniqueness: {message: "Email déjà utilisé"}
 
   # Exécution de la méthode 'welcome_send' après la création d'un user
-  after_create :welcome_send
+  #after_create :welcome_send
 
   # Méthode pour envoyer un email de bienvenue à un user
   def welcome_send

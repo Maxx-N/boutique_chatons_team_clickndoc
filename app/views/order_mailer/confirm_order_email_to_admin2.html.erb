@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <% if @user.first_name != nil %>
+      <h1>Bonjour <%= @user.first_name %> <%=  %>, votre commande a bien été prise en compte !</h1>
+    <% else %>
+      <h1>Bonjour cher administrateur, une commande vient d'être passée !</h1>
+    <% end %>
+
+    
+    <!-- Article commandé par l'utilisateur -->
+    <p>Voici l'article qui a été commandé : </p>
+    <p><%= @item.title %></p>
+    <p><%= @item.price %></p>
+
+
+    <p>
+      Encore un pigeon qui s'est fait avoir à commander des images de chatons super chères que l'on peut trouver en deux clics sur internet ^^
+    </p>
+  </body>
+</html>

@@ -1,17 +1,14 @@
 class OrderMailer < ApplicationMailer
 
-	def confirm_order_email(order)
-		@order = order
-
-
-    @items_array = Item.where(ItemOrder.where(order_id: @order.id))
-    # ItemOrder.where(order_id: @order.id) -> on cherche dans la table ItemOrder les éléments dont l'id vaut @order.id
-    # puis on regarde la colonne "item_id" de cet élément
-
-
-
-		@url = 'http://boutique_chatons_team_clickndoc.fr/login'
-		mail(to: @order.cart.user.email, subject: 'Confirmation de votre commande.')
+	def confirm_order_email_to_user2(order)
+		@cart = Order.find_by(cart_id: order.cart_id)
+		@all_items_cart = Cart.where(id: ItemCart.where(cart_id: @cart.id)) 
+		print "0" *100
+		puts @all_items_cart
+		puts @all_items_cart.class
+		puts @all_items_cart.inspect
+		puts "1"*100
+		mail(to: "staff-chaton@yopmail.com", subject: "Une commande vient d'être passée.")
 	end
 
 end

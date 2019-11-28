@@ -66,6 +66,7 @@ gem 'faker'
 gem 'table_print'
 gem 'letter_opener'
 gem 'colorize'
-gem 'dotenv-rails'
+gem 'dotenv'
 gem 'devise'
 gem 'stripe'
+gem "administrate"
