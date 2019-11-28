@@ -3,9 +3,9 @@ window.addEventListener("DOMContentLoaded", dropdownSearchByTag);
 
 function dropdownNavbar() {
 
-  let btnNavbar = document.getElementsByClassName("btn-navbar");
-  let menuNavbar = document.getElementsByClassName("menu-navbar");
-  let statusNavbar = [];
+  var btnNavbar = document.getElementsByClassName("btn-navbar");
+  var menuNavbar = document.getElementsByClassName("menu-navbar");
+  var statusNavbar = [];
 
     for (let n = 0; n < btnNavbar.length; n++) {
       var st = statusNavbar.push(false);
@@ -35,9 +35,9 @@ function dropdownNavbar() {
 
 function dropdownSearchByTag() {
 
-  let btnTag = document.getElementsByClassName("btn-drop-tag");
-  let menuTag = document.getElementsByClassName("search-by-tag");
-  let statusTag = false;
+  var btnTag = document.getElementsByClassName("btn-drop-tag");
+  var menuTag = document.getElementsByClassName("search-by-tag");
+  var statusTag = false;
 
   function drop() {
     if (statusTag == false) {
