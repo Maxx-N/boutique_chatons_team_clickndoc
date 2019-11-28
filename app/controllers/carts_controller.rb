@@ -26,7 +26,12 @@ class CartsController < ApplicationController
 
         flash[:success] = "Article ajouté au panier !"
       else
-        redirect_to '/'
+        
+        respond_to do |format|
+          format.html { redirect_to root_path }
+          format.js { }
+        end
+        
         flash[:alert] = "Cet article est déjà dans votre panier" 
       end
 
@@ -39,6 +44,10 @@ class CartsController < ApplicationController
 
   def destroy
     current_user.cart.item_carts.destroy_all
-    redirect_to root_path
+    
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js { }
+    end
   end
 end
