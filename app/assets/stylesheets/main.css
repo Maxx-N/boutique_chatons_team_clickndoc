@@ -35,8 +35,7 @@
 
 body {
   /* image à passer en ruby + à retoucher photoshop */
-  background-image:url('https://cdn.nohat.cc/thumb/f/720/4710860337446912.jpg');
-}
+  background-image:url("./background.jpg");}
 a {
   text-decoration: none;
   color: var(--link);

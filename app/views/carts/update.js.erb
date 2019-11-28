@@ -1,0 +1,3 @@
+alert("La photo a bien été ajoutée à votre panier");
+let nbrItemsCart = document.getElementsByClassName("nbr-items-cart");
+nbrItemsCart[0].innerHTML = "<%= j render 'nbr_items', cart: @cart %>";

@@ -18,7 +18,12 @@ class CartsController < ApplicationController
         ic.cart_id = current_user.id
         ic.item_id = Item.find(params[:id]).id
         ic.save
-        redirect_to '/'
+        
+        respond_to do |format|
+          format.html { redirect_to root_path }
+          format.js { }
+        end
+
         flash[:success] = "Article ajouté au panier !"
       else
         redirect_to '/'
