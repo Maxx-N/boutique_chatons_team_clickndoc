@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= form_tag url_for(action: 'create'), method: "post", multipart: true do %>
+      <%= label_tag :title, "Titre de l'image" %>
+      <%= text_field_tag 'title', @item.title %>
+      <br /> <br />
+
+      <%= label_tag "Image de l'evenement" %><br />
+      <%= file_field_tag :item_picture %>
+      <br /> <br />
+
+      <%= label_tag 'Prix' %>
+      <%= text_field_tag 'price', @item.price %>
+      <br /> <br />
+
+      <%= label_tag 'description:' %>
+      <%= text_area_tag 'description', @item.description %>
+      <br /> <br />
+
+      <%= submit_tag "Creation de l'offre" %>
+    <% end %>
+  </body>
+</html>
