@@ -7,7 +7,7 @@
   <%= link_to "Modifier le compte", edit_user_registration_path %>
   </div>
   <div class="right-profile">
-    
+
       <p class="ml-3">
           <span class="green up">Nom :</span> <%= @user.last_name%><br />
           <span class="green up">Prénom :</span> <%= @user.first_name %><br />
@@ -22,10 +22,10 @@
 <% @orders.each do |order| %>
       <!-- commande 1 -->
       <div class="card-cart">
-  
+
         <div class="navbar-cart-title playfair">Commande #<%=order.id%></div>
         <div class="navbar-cart-number up">Date : <%= order.created_at %></div>
-        
+
         <div class="all-preview-cart">
 
         <% all_items_order = ItemOrder.where(order_id: order.id) %>
@@ -33,7 +33,11 @@
           <div class="preview-cart align-items-center d-flex justify-content-between flex-nowrap">
 
               <div>
-                <%= image_tag item.item.image_url, :class => "icone-preview" %>
+                <%if item.item.image_url == nil %>
+                  <%= image_tag item.item.item_picture, alt: 'item_picture',:class => "icone-preview" %>
+                <%else%>
+                  <%= image_tag item.item.image_url, :class => "icone-preview" %>
+                <% end %>
               </div>
 
               <div class="preview-name up">
@@ -48,23 +52,23 @@
           </div>
         <%end%>
         </div>
-                  
+
             <div class="up text-right total-cart">
             <div class="min">Nombre d'articles : <%= all_items_order.length %></div>
 
             <% total = 0 %>
             <% order.items.each do |item| %>
               <% total += item.price %>
-            <% end %>  
+            <% end %>
 
             Total : <%= total %> €
             </div>
-        
-      
+
+
        </div>
 
 <%end%>
-  
+
     </div>
 
   </div>
