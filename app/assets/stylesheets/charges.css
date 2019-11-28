@@ -1,0 +1,33 @@
+.form-charge {
+  width:800px;
+  margin:50px auto;
+  background-color:var(--white);
+  padding:50px 30px;
+}
+
+/* mini bann stripe */
+
+.img-jumbotron2 {
+  width:100%;
+  object-fit:cover;
+  height: 350px;
+  z-index:0;
+}
+
+.jumbotron-text2 {
+  z-index:1;
+  margin-top:-350px;
+  height: 350px;
+}
+
+.jumbotron-text2 h1{
+  color: var(--dark-grey);
+}
+
+.jumbotron-text2 p{
+  background-color: var(--light-grey);
+  width:50%;
+  line-height:18px;
+  color: var(--dark-grey) !important;
+  padding: 3px 10px 1px 10px;
+}
