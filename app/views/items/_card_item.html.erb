@@ -12,7 +12,7 @@
           <%= item.price %> €
           </div>
     
-          <%= link_to cart_path(item.id), method: :put do %>
+          <%= link_to cart_path(item.id), method: :put, :remote => true do %>
             <div class="add-to-cart">
               <i class="fas fa-shopping-cart"></i>
             </div>

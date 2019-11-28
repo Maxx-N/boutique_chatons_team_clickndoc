@@ -1,0 +1,3 @@
+<% cart = Cart.find_by(user_id: current_user.id) %>
+
+<%= cart.items.length %>
